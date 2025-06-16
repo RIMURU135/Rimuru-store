@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rimuru Store</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://tmpfiles.org/dl/2091102/5ya5oammfh61h3hxcxvjevllg.jpg'); /* Ganti dengan URL gambar Rimuru Tempest */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 50px;
+            font-size: 4em;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        .product-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .product-item {
+            font-size: 1.2em;
+            margin: 10px 0;
+            text-align: left;
+        }
+        .payment-info {
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+        .payment-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .payment-info li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Rimuru Store</h1>
+
+    <div class="container">
+        <h2>Daftar Produk:</h2>
+        <ul class="product-list">
+            <li class="product-item">FF | Epep | FREE FIRE 💸💸</li>
+            <li class="product-item">*DM FF INDO🍧*</li>
+            <li class="product-item">💳 12💎 = 2.500</li>
+            <li class="product-item">💳 25💎 = 4.999</li>
+            <li class="product-item">💳 50💎 = 7.300</li>
+            <li class="product-item">💳 75💎 = 10.000</li>
+            <li class="product-item">💳 90💎 = 12.999</li>
+            <li class="product-item">💳 100💎 = 14.000</li>
+            <li class="product-item">💳 120💎 = 16.000</li>
+            <li class="product-item">💳 130💎 = 18.000</li>
+            <li class="product-item">💳 150💎 = 19.900</li>
+            <li class="product-item">💳 160💎 = 21.000</li>
+            <li class="product-item">💳 180💎 = 23.999</li>
+            <li class="product-item">💳 190💎 = 25.000</li>
+            <li class="product-item">💳 200💎 = 26.000</li>
+            <li class="product-item">💳 210💎 = 27.000</li>
+            <li class="product-item">💳 membership mingguan = 28.000</li>
+            <li class="product-item">💳 250💎 = 32.000</li>
+        </ul>
+
+        <div class="payment-info">
+            <h2>Informasi Pembayaran:</h2>
+            <ul>
+                <li>No Adm: 089506222871</li>
+                <li>Dana: 083140427092</li>
+                <li>GOPAY: 083140427092</li>
+                <li>SPAY: 083140427092</li>
+                <li>OVO: 083140427092</li>
+                <li>SEABAK: 083140427092</li>
+                <li>QRIS: CHAT ADMIN</li>
+            </ul>
+            <p><strong>Note 🦢</strong></p>
+            <ul>
+                <li>- Nominal lain tanyakan admin</li>
+                <li>- No rush</li>
+                <li>- Send ID - Pay - Done</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
