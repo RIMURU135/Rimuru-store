@@ -13,6 +13,23 @@
             --light: #ecf0f1;
             --dark: #2c3e50;
             --success: #2ecc71;
+            
+            /* Light mode colors */
+            --bg-color: #f5f7fa;
+            --text-color: #333;
+            --card-bg: white;
+            --header-bg: linear-gradient(135deg, var(--primary), var(--secondary));
+            --footer-bg: var(--dark);
+            --section-bg: #f0f8ff;
+        }
+        
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --card-bg: #2d2d2d;
+            --header-bg: linear-gradient(135deg, #1e3c72, #2a5298);
+            --footer-bg: #121212;
+            --section-bg: #252525;
         }
         
         * {
@@ -20,16 +37,17 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
         }
         
         body {
-            background-color: #f5f7fa;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: var(--header-bg);
             color: white;
             padding: 1rem 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -68,6 +86,7 @@
         nav ul {
             display: flex;
             list-style: none;
+            align-items: center;
         }
         
         nav ul li {
@@ -84,6 +103,25 @@
         }
         
         nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .theme-toggle:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
         
@@ -166,7 +204,7 @@
         
         .section-title h2 {
             font-size: 2.2rem;
-            color: var(--dark);
+            color: var(--text-color);
             position: relative;
             display: inline-block;
             padding-bottom: 0.5rem;
@@ -190,7 +228,7 @@
         }
         
         .product-card {
-            background-color: white;
+            background-color: var(--card-bg);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -223,7 +261,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.5rem 0;
-            border-bottom: 1px dashed #eee;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
         }
         
         .price-item:last-child {
@@ -259,7 +297,7 @@
         }
         
         .contact-card {
-            background-color: white;
+            background-color: var(--card-bg);
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -284,7 +322,7 @@
         }
         
         .testimonial-card {
-            background-color: white;
+            background-color: var(--card-bg);
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -310,7 +348,7 @@
         }
         
         footer {
-            background-color: var(--dark);
+            background-color: var(--footer-bg);
             color: white;
             padding: 3rem 0 1rem;
             text-align: center;
@@ -374,6 +412,53 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        /* Music player */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--card-bg);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 99;
+        }
+        
+        .music-player i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        /* Dark mode toggle */
+        .theme-toggle-container {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5rem;
+        }
+        
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -383,10 +468,11 @@
             nav ul {
                 margin-top: 1rem;
                 justify-content: center;
+                flex-wrap: wrap;
             }
             
             nav ul li {
-                margin: 0 0.5rem;
+                margin: 0.5rem;
             }
             
             .hero h2 {
@@ -407,28 +493,6 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
-        }
-        
-        /* Music player */
-        .music-player {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            z-index: 99;
-        }
-        
-        .music-player i {
-            font-size: 1.5rem;
-            color: var(--primary);
         }
     </style>
 </head>
@@ -455,6 +519,11 @@
                         <li><a href="#about">Tentang Kami</a></li>
                         <li><a href="#testimonials">Testimoni</a></li>
                         <li><a href="#contact">Kontak</a></li>
+                        <li class="theme-toggle-container">
+                            <button class="theme-toggle" id="themeToggle">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -852,7 +921,7 @@
         </div>
     </section>
     
-    <section id="about" style="background-color: #f0f8ff;">
+    <section id="about" style="background-color: var(--section-bg);">
         <div class="container">
             <div class="section-title">
                 <h2>Tentang Kami</h2>
@@ -948,7 +1017,7 @@
         </div>
     </section>
     
-    <section id="contact" style="background-color: #f0f8ff;">
+    <section id="contact" style="background-color: var(--section-bg);">
         <div class="container">
             <div class="section-title">
                 <h2>Kontak Kami</h2>
@@ -1035,6 +1104,37 @@
             }
             isPlaying = !isPlaying;
         });
+        
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved user preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.classList.add(currentTheme);
+            updateThemeIcon(currentTheme);
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', '');
+                updateThemeIcon('');
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+                updateThemeIcon('dark-mode');
+            }
+        });
+        
+        function updateThemeIcon(theme) {
+            if (theme === 'dark-mode') {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
