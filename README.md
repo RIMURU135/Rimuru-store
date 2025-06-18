@@ -126,7 +126,7 @@
         }
         
         .hero {
-            background: url('https://file.idnet.my.id/api/preview.php?file=ymggle9h.png') no-repeat center center/cover;
+            background: url('https://file.idnet.my.id/api/preview.php?file=dh0kzo2u.jpg') no-repeat center center/cover;
             height: 60vh;
             display: flex;
             align-items: center;
@@ -498,7 +498,7 @@
 </head>
 <body>
     <audio id="bgMusic" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <source src="https://files.catbox.moe/xbsqo2.opus" type="audio/mpeg">
     </audio>
     
     <div class="music-player" id="musicToggle">
@@ -1076,7 +1076,7 @@
                     <p><i class="fas fa-envelope"></i> irwanaril798@gmail.com</p>
                     <div class="social-links">
                         <a href="https://wa.me/6289506222871"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/zainala_keyzi?igsh=MTk1Zm10OXBlZjdzZA=="><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
