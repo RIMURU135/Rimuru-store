@@ -1077,7 +1077,7 @@
                     <div class="social-links">
                         <a href="https://wa.me/6289506222871"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/zainala_keyzi?igsh=MTk1Zm10OXBlZjdzZA=="><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/share/16iKtXrYsy/"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
