@@ -947,7 +947,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://file.idnet.my.id/api/preview.php?file=ymggle9h.png" alt="Tentang Rimuru Store">
+                    <img src="https://file.idnet.my.id/api/preview.php?file=ikhk9tu8.jpg" alt="Tentang Rimuru Store">
                 </div>
             </div>
         </div>
