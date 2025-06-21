@@ -126,7 +126,7 @@
         }
         
         .hero {
-            background: url('https://file.idnet.my.id/api/preview.php?file=2aheqo7m.jpg') no-repeat center center/cover;
+            background: url('https://file.idnet.my.id/api/preview.php?file=iwum190h.jpg') no-repeat center center/cover;
             height: 60vh;
             display: flex;
             align-items: center;
