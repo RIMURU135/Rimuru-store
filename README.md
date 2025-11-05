@@ -1299,7 +1299,7 @@
                             <li>GOPAY: 083140427092</li>
                             <li>SPAY: 083140427092</li>
                             <li>OVO: 083140427092</li>
-                            <li>SEABAK: 083140427092</li>
+                            <li>SEABAK: 901428220963</li>
                             <li>QRIS: CHAT ADMIN</li>
                         </ul>
                         <p style="margin-top: 1rem; font-style: italic;"> Note: Nominal lain tanyakan admin, no rush, send id - pay - done </p>
