@@ -1,9 +1,7 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Rimuru Store - Topup Game & Layanan Digital Terpercaya. Proses cepat, harga terjangkau.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Rimuru Store - Topup Game & Layanan Digital Terpercaya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -11,8 +9,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.2s;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            transition: background-color 0.2s ease, color 0.2s, border-color 0.2s;
         }
 
         :root {
@@ -28,7 +26,7 @@
             --footer-bg: #0f172a;
             --section-bg: #f1f5f9;
             --border-light: #e2e8f0;
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
         }
 
         .dark-mode {
@@ -58,7 +56,7 @@
             margin: 0 auto;
         }
 
-        /* ========= HEADER ========= */
+        /* Header */
         header {
             background: var(--header-bg);
             color: white;
@@ -131,9 +129,10 @@
             justify-content: center;
         }
 
-        /* ========= HERO + VIDEO (DIPERBAIKI) ========= */
+        /* HERO + VIDEO - DIPERBAIKI: TIDAK TERPOTONG, FULL LANDSCAPE */
         .hero {
             position: relative;
+            width: 100%;
             height: 100vh;
             min-height: 560px;
             display: flex;
@@ -142,6 +141,7 @@
             text-align: center;
             color: white;
             overflow: hidden;
+            background-color: #000; /* fallback hitam */
         }
 
         .video-background {
@@ -150,19 +150,20 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;   /* === TIDAK TERPOTONG, video utuh landscape === */
             object-position: center center;
+            background-color: #000; /* latar hitam di area kosong */
             z-index: 0;
         }
 
-        /* fallback image jika video gagal */
+        /* fallback jika video gagal */
         .hero-video-fallback {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(107deg, #0f2027, #203a43, #2c5364);
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             z-index: 0;
             display: none;
         }
@@ -183,7 +184,7 @@
             z-index: 2;
             max-width: 820px;
             padding: 2rem;
-            animation: fadeUp 0.9s ease;
+            animation: fadeUp 0.8s ease;
         }
 
         @keyframes fadeUp {
@@ -192,13 +193,13 @@
         }
 
         .hero h2 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 12px rgba(0,0,0,0.5);
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
             text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
         }
@@ -230,7 +231,6 @@
             transform: scale(1.05);
         }
 
-        /* ========= BUTTONS & CARDS ========= */
         .btn {
             display: inline-block;
             background: var(--accent);
@@ -266,7 +266,7 @@
             border-bottom: 4px solid var(--primary);
         }
 
-        /* Filter & Search */
+        /* Filter & Produk */
         .product-filters {
             display: flex;
             justify-content: space-between;
@@ -321,7 +321,6 @@
             border-color: var(--primary);
         }
 
-        /* Grid Produk */
         .products {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -332,7 +331,7 @@
             background: var(--card-bg);
             border-radius: 28px;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow);
             transition: all 0.25s;
             border: 1px solid var(--border-light);
         }
@@ -489,7 +488,7 @@
             padding: 1.5rem;
             border-radius: 28px;
             width: 280px;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow);
         }
         .testimonial-header {
             display: flex;
@@ -569,24 +568,29 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.85);
             z-index: 9999;
             align-items: center;
             justify-content: center;
             flex-direction: column;
             color: white;
         }
+        @keyframes spin { to { transform: rotate(360deg); } }
         @media (max-width: 780px) {
             .hero h2 { font-size: 2rem; }
             .hero p { font-size: 1rem; }
             .header-content { flex-direction: column; }
             .category-filters { justify-content: center; }
         }
+        @media (orientation: landscape) and (max-width: 900px) {
+            .hero { min-height: 100vh; }
+            .hero h2 { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 <div class="loading" id="loading">
-    <div class="loading-spinner" style="width:50px;height:50px;border:5px solid rgba(255,255,255,0.3);border-top:5px solid white;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:1rem;"></div>
+    <div style="width:50px;height:50px;border:5px solid rgba(255,255,255,0.3);border-top:5px solid white;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:1rem;"></div>
     <p>Memuat pengalaman terbaik...</p>
 </div>
 
@@ -600,7 +604,7 @@
 </div>
 <div class="cart-modal" id="cartModal">
     <div class="cart-content">
-        <div class="cart-header"><h2>🛒 Keranjang</h2><button id="closeCart">&times;</button></div>
+        <div class="cart-header"><h2>🛒 Keranjang Belanja</h2><button id="closeCart">&times;</button></div>
         <div id="cartItems"></div>
         <div class="cart-total"><span>Total : </span><span id="cartTotal">Rp 0</span></div>
         <div class="cart-actions"><button class="btn-clear" id="clearCart">Kosongkan</button><button class="btn-checkout" id="checkoutBtn">Checkout WA</button></div>
@@ -615,6 +619,7 @@
 </header>
 
 <section class="hero" id="home">
+    <!-- Video Background: object-fit contain -> TIDAK TERPOTONG, landscape utuh -->
     <video class="video-background" id="backgroundVideo" autoplay muted loop playsinline poster="https://picsum.photos/id/104/1920/1080">
         <source src="https://image2url.com/r2/default/videos/1774790761304-592aeffb-1a5b-4038-872b-48cc9d92b619.mp4" type="video/mp4">
     </video>
@@ -626,7 +631,7 @@
 <section id="products"><div class="container"><div class="section-title"><h2>🔥 Produk Kami</h2></div>
 <div class="product-filters"><div class="search-box"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="Cari diamond, robux, UC..."></div>
 <div class="category-filters"><button class="category-btn active" data-category="all">Semua</button><button class="category-btn" data-category="freefire">Free Fire</button><button class="category-btn" data-category="mobilelegends">Mobile Legends</button><button class="category-btn" data-category="roblox">Roblox</button><button class="category-btn" data-category="cod">Call of Duty</button><button class="category-btn" data-category="pubg">PUBG</button><button class="category-btn" data-category="lainnya">Lainnya</button></div></div>
-<div class="products" id="productsContainer"><!-- produk akan diisi via JS agar filter terintegrasi sempurna --></div></div></section>
+<div class="products" id="productsContainer"></div></div></section>
 
 <section id="about" style="background-color: var(--section-bg);"><div class="container"><div class="section-title"><h2>Tentang Kami</h2></div><div class="about-content"><p>Rimuru Store adalah penyedia topup game & layanan digital terpercaya sejak 2020. Proses super cepat, harga miring, dan dukungan ramah. Metode pembayaran: DANA, GOPAY, OVO, SPAY, SEA BANK, QRIS. CS 24 jam siap membantu.</p><div style="margin-top:1rem"><strong>💳 Metode Pembayaran:</strong> 0831-4042-7092 (Semua e-Wallet) / BANK JAGO : 901428220963</div></div></div></section>
 
@@ -637,28 +642,22 @@
 <footer><div class="container"><div class="footer-content"><div><h3>Rimuru Store</h3><p>Topup gaming terpercaya & layanan digital</p></div><div><h3>Menu</h3><ul style="list-style:none"><li><a href="#home" style="color:white">Beranda</a></li><li><a href="#products" style="color:white">Produk</a></li></ul></div><div><h3>Sosial</h3><div class="social-links"><a href="https://wa.me/6283140427092"><i class="fab fa-whatsapp"></i></a><a href="https://www.instagram.com/zainala_keyzi"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook"></i></a></div></div></div><div class="copyright"><p>© 2025 Rimuru Store - All rights reserved.</p></div></div></footer>
 
 <script>
-    // ---------- DATA PRODUK (LENGKAP) ----------
+    // ========= DATA PRODUK LENGKAP =========
     const productsData = [
-        // Free Fire
         { category: "freefire", name: "Free Fire 12 💎", price: 2500, display: "12 💎 = 2.500" },
         { category: "freefire", name: "Free Fire 25 💎", price: 4999, display: "25 💎 = 4.999" },
         { category: "freefire", name: "Free Fire 50 💎", price: 7300, display: "50 💎 = 7.300" }, { category: "freefire", name: "Free Fire 75 💎", price: 10000, display: "75 💎 = 10.000" },
         { category: "freefire", name: "Free Fire 100 💎", price: 14000, display: "100 💎 = 14.000" }, { category: "freefire", name: "Free Fire 150 💎", price: 19900, display: "150 💎 = 19.900" },
         { category: "freefire", name: "Free Fire 200 💎", price: 26000, display: "200 💎 = 26.000" }, { category: "freefire", name: "Free Fire Membership Mingguan", price: 28000, display: "Membership Mingguan = 28.000" },
-        // Mobile Legends
         { category: "mobilelegends", name: "Mobile Legends 14 💎", price: 4500, display: "14 💎 = 4.500" }, { category: "mobilelegends", name: "Mobile Legends 36 💎", price: 10500, display: "36 💎 = 10.500" },
         { category: "mobilelegends", name: "Mobile Legends 50 💎", price: 14500, display: "50 💎 = 14.500" }, { category: "mobilelegends", name: "Mobile Legends 85 💎", price: 23000, display: "85 💎 = 23.000" },
         { category: "mobilelegends", name: "Mobile Legends 112 💎", price: 31000, display: "112 💎 = 31.000" }, { category: "mobilelegends", name: "Mobile Legends 185 💎", price: 50000, display: "185 💎 = 50.000" },
         { category: "mobilelegends", name: "Mobile Legends 284 💎", price: 75000, display: "284 💎 = 75.000" }, { category: "mobilelegends", name: "Mobile Legends 429 💎", price: 111000, display: "429 💎 = 111.000" },
         { category: "mobilelegends", name: "Mobile Legends 600 💎", price: 154000, display: "600 💎 = 154.000" }, { category: "mobilelegends", name: "Mobile Legends 792 💎", price: 206000, display: "792 💎 = 206.000" },
         { category: "mobilelegends", name: "Mobile Legends 1050 💎", price: 265000, display: "1050 💎 = 265.000" },
-        // Roblox
         { category: "roblox", name: "Roblox 100 Robux", price: 18000, display: "100 Robux = 18.000" }, { category: "roblox", name: "Roblox 400 Robux", price: 77000, display: "400 Robux = 77.000" }, { category: "roblox", name: "Roblox Gift Card 200rb", price: 203000, display: "Gift Card = 203.000" },
-        // COD
         { category: "cod", name: "COD 26 CP", price: 5500, display: "26 CP = 5.500" }, { category: "cod", name: "COD 127 CP", price: 18800, display: "127 CP = 18.800" }, { category: "cod", name: "COD 528 CP", price: 96000, display: "528 CP = 96.000" }, { category: "cod", name: "COD 1056 CP", price: 185000, display: "1056 CP = 185.000" },
-        // PUBG
         { category: "pubg", name: "PUBG 52 UC", price: 16000, display: "52 UC = 16.000" }, { category: "pubg", name: "PUBG 263 UC", price: 74000, display: "263 UC = 74.000" }, { category: "pubg", name: "PUBG 500 UC", price: 112000, display: "500 UC = 112.000" }, { category: "pubg", name: "PUBG 1000 UC", price: 242000, display: "1000 UC = 242.000" },
-        // Lainnya (Bot WA + Sosmed)
         { category: "lainnya", name: "Sewa Bot WA 1 bulan", price: 5000, display: "Bot WA 1 bulan = 5.000" }, { category: "lainnya", name: "Sewa Bot WA 1 tahun", price: 25000, display: "Bot WA 1 tahun = 25.000" },
         { category: "lainnya", name: "Suntik Tiktok 500 Like", price: 1000, display: "TikTok 500 Like = 1.000" }, { category: "lainnya", name: "Suntik IG 100 Follow", price: 3000, display: "IG 100 Follow = 3.000" }
     ];
@@ -689,7 +688,7 @@
     }
     function showNotif(msg) { const n = document.createElement('div'); n.innerText = msg; n.style.cssText = 'position:fixed;top:20px;right:20px;background:var(--primary);color:white;padding:12px 20px;border-radius:40px;z-index:9999'; document.body.appendChild(n); setTimeout(()=>n.remove(),2500); }
 
-    // Filter & search terintegrasi
+    // Filter & search
     let activeCategory = 'all'; let searchTerm = '';
     function filterProducts() {
         const cards = document.querySelectorAll('.product-card');
@@ -698,17 +697,17 @@
     document.getElementById('searchInput').addEventListener('input', e => { searchTerm = e.target.value; filterProducts(); });
     document.querySelectorAll('.category-btn').forEach(btn => { btn.addEventListener('click', () => { document.querySelectorAll('.category-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); activeCategory = btn.getAttribute('data-category'); filterProducts(); }); });
 
-    // Cart modal & events
+    // Cart Modal
     document.getElementById('cartBtn').onclick = () => document.getElementById('cartModal').style.display = 'flex';
     document.getElementById('closeCart').onclick = () => document.getElementById('cartModal').style.display = 'none';
     window.onclick = e => { if(e.target === document.getElementById('cartModal')) document.getElementById('cartModal').style.display = 'none'; };
     document.getElementById('clearCart').onclick = () => { if(cart.length && confirm('Kosongkan keranjang?')) { cart = []; updateCartUI(); showNotif('Keranjang dikosongkan'); } };
     document.getElementById('checkoutBtn').onclick = () => { if(!cart.length) return alert('Keranjang kosong!'); let msg = 'Halo Rimuru Store, saya ingin order:\n'; let total=0; cart.forEach(i=>{ let sub=i.price*i.quantity; total+=sub; msg+=`- ${i.name} (${i.quantity}x) = Rp${sub.toLocaleString()}\n`; }); msg+=`\nTotal: Rp${total.toLocaleString()}\nApakah ready?`; window.open(`https://wa.me/6283140427092?text=${encodeURIComponent(msg)}`,'_blank'); };
 
-    // Video improvements (fallback & stabil)
+    // Video: object-fit contain (tidak terpotong), kontrol play/mute
     const video = document.getElementById('backgroundVideo');
     const fallbackDiv = document.getElementById('videoFallback');
-    video.onerror = () => { console.log('Video error, fallback aktif'); video.style.display = 'none'; fallbackDiv.style.display = 'block'; fallbackDiv.style.background = "linear-gradient(135deg, #0f2027, #2c5364), url('https://picsum.photos/id/104/1920/1080') center/cover"; document.getElementById('loading').style.display = 'none'; };
+    video.onerror = () => { video.style.display = 'none'; fallbackDiv.style.display = 'block'; fallbackDiv.style.background = "linear-gradient(135deg, #0f2027, #2c5364)"; document.getElementById('loading').style.display = 'none'; };
     video.addEventListener('canplay', () => document.getElementById('loading').style.display = 'none');
     video.addEventListener('loadstart', () => document.getElementById('loading').style.display = 'flex');
     document.getElementById('playPauseVideo').addEventListener('click', () => { if(video.paused) video.play(); else video.pause(); });
@@ -716,11 +715,12 @@
     video.addEventListener('play', () => { document.querySelector('#playPauseVideo i').className = 'fas fa-pause'; });
     video.addEventListener('pause', () => { document.querySelector('#playPauseVideo i').className = 'fas fa-play'; });
 
-    // Dark Mode + Music
+    // Dark Mode & Music
     const themeToggle = document.getElementById('themeToggle'); const body = document.body;
     if(localStorage.getItem('theme') === 'dark-mode') body.classList.add('dark-mode'), themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     themeToggle.onclick = () => { body.classList.toggle('dark-mode'); const isDark = body.classList.contains('dark-mode'); localStorage.setItem('theme', isDark ? 'dark-mode' : ''); themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>'; };
     const music = document.getElementById('bgMusic'); let musicPlaying = false; document.getElementById('musicToggle').onclick = () => { if(musicPlaying) { music.pause(); document.querySelector('#musicToggle i').className = 'fas fa-music'; } else { music.play(); document.querySelector('#musicToggle i').className = 'fas fa-pause'; } musicPlaying = !musicPlaying; };
+    
     buildProductsHTML(); updateCartUI(); filterProducts();
     document.querySelectorAll('a[href^="#"]').forEach(anchor => anchor.addEventListener('click', function(e){ e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'}); }));
     setTimeout(() => { if(video.readyState === 0) { video.style.display = 'none'; fallbackDiv.style.display = 'block'; fallbackDiv.style.background = "#1e293b"; document.getElementById('loading').style.display = 'none'; } }, 3000);
