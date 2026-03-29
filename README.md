@@ -863,7 +863,7 @@
     <section class="hero" id="home">
         <!-- Video Background -->
         <video class="video-background" id="backgroundVideo" autoplay muted loop>
-            <source src="https://files.catbox.moe/027sir.mp4" type="video/mp4">
+            <source src="https://image2url.com/r2/default/videos/1774790761304-592aeffb-1a5b-4038-872b-48cc9d92b619.mp4" type="video/mp4">
             Browser Anda tidak mendukung video HTML5.
         </video>
         
