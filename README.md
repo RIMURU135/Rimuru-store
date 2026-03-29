@@ -119,8 +119,8 @@
         .theme-toggle:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-        
-        /* BACKGROUND VIDEO - FULL UKURAN & TIDAK TERPOTONG (Landscape + Portrait) */
+
+        /* BACKGROUND VIDEO - DIPERBAIKI KHUSUS DESKTOP (UKURAN ASLI LANDSCAPE TETAP UTUH) */
         .hero {
             position: relative;
             height: 100vh;
@@ -135,13 +135,10 @@
         
         .video-background {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            min-width: 100%;
-            min-height: 100%;
-            transform: translate(-50%, -50%);
             object-fit: cover;
             object-position: center center;
             z-index: -1;
@@ -158,14 +155,27 @@
             z-index: 0;
         }
         
-        @media (orientation: portrait) {
-            .hero { height: 100vh; }
-            .video-background { object-position: center top; }
+        /* Desktop (Landscape) - Paksa video tetap landscape & utuh */
+        @media (min-width: 1024px) {
+            .hero {
+                height: 100vh;
+            }
+            .video-background {
+                object-fit: cover;
+                object-position: center center;
+                width: 100%;
+                height: 100%;
+            }
         }
         
-        @media (orientation: landscape) {
-            .hero { height: 100vh; }
-            .video-background { object-position: center center; }
+        /* Mobile Portrait - tetap utuh */
+        @media (orientation: portrait) and (max-width: 1023px) {
+            .hero {
+                height: 100vh;
+            }
+            .video-background {
+                object-position: center top;
+            }
         }
         
         .hero-content {
@@ -332,7 +342,7 @@
     </header>
 
     <section class="hero" id="home">
-        <!-- Video Background Full Ukuran -->
+        <!-- Video Background - Sudah diperbaiki agar di Desktop tetap landscape & ukuran asli utuh -->
         <video class="video-background" id="backgroundVideo" autoplay muted loop playsinline>
             <source src="https://image2url.com/r2/default/videos/1774790761304-592aeffb-1a5b-4038-872b-48cc9d92b619.mp4" type="video/mp4">
             Browser Anda tidak mendukung video HTML5.
