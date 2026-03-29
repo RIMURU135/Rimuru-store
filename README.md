@@ -122,7 +122,7 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
         
-        /* HERO SECTION + VIDEO BACKGROUND (HANYA BAGIAN INI YANG DIPERBAIKI) */
+        /* HERO SECTION + VIDEO BACKGROUND (SUDAH DIPERBAIKI KHUSUS DESKTOP) */
         .hero {
             position: relative;
             height: 60vh;
@@ -141,9 +141,11 @@
             left: 50%;
             width: 100%;
             height: 100%;
+            min-width: 100%;
+            min-height: 100%;
             transform: translate(-50%, -50%);
             object-fit: cover;
-            object-position: center;
+            object-position: center center;
             z-index: -1;
         }
         
@@ -864,7 +866,7 @@
     </header>
 
     <section class="hero" id="home">
-        <!-- Video Background (HANYA BAGIAN INI YANG DIPERBAIKI) -->
+        <!-- Video Background (SUDAH DIPERBAIKI AGAR TIDAK TERPOTONG DI DESKTOP) -->
         <video class="video-background" id="backgroundVideo" autoplay muted loop playsinline>
             <source src="https://image2url.com/r2/default/videos/1774790761304-592aeffb-1a5b-4038-872b-48cc9d92b619.mp4" type="video/mp4">
             Browser Anda tidak mendukung video HTML5.
@@ -915,72 +917,72 @@
                 <div class="product-card" data-category="freefire">
                     <div class="product-header">
                         <h3>Free Fire</h3>
-                        <p>FF | Epep | FREE FIREðŸ’¸ðŸ’¸</p>
+                        <p>FF | Epep | FREE FIRE 💸💸</p>
                     </div>
                     <div class="product-body">
                         <div class="price-item">
-                            <span>12ðŸ’Ž = 2.500</span>
-                            <button class="add-to-cart" data-name="Free Fire 12ðŸ’Ž" data-price="2500">+ Keranjang</button>
+                            <span>12 💎 = 2.500</span>
+                            <button class="add-to-cart" data-name="Free Fire 12 💎" data-price="2500">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>25ðŸ’Ž = 4.999</span>
-                            <button class="add-to-cart" data-name="Free Fire 25ðŸ’Ž" data-price="4999">+ Keranjang</button>
+                            <span>25 💎 = 4.999</span>
+                            <button class="add-to-cart" data-name="Free Fire 25 💎" data-price="4999">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>50ðŸ’Ž = 7.300</span>
-                            <button class="add-to-cart" data-name="Free Fire 50ðŸ’Ž" data-price="7300">+ Keranjang</button>
+                            <span>50 💎 = 7.300</span>
+                            <button class="add-to-cart" data-name="Free Fire 50 💎" data-price="7300">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>75ðŸ’Ž = 10.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 75ðŸ’Ž" data-price="10000">+ Keranjang</button>
+                            <span>75 💎 = 10.000</span>
+                            <button class="add-to-cart" data-name="Free Fire 75 💎" data-price="10000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>90ðŸ’Ž = 12.999</span>
-                            <button class="add-to-cart" data-name="Free Fire 90ðŸ’Ž" data-price="12999">+ Keranjang</button>
+                            <span>90 💎 = 12.999</span>
+                            <button class="add-to-cart" data-name="Free Fire 90 💎" data-price="12999">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>100ðŸ’Ž = 14.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 100ðŸ’Ž" data-price="14000">+ Keranjang</button>
+                            <span>100 💎 = 14.000</span>
+                            <button class="add-to-cart" data-name="Free Fire 100 💎" data-price="14000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>120ðŸ’Ž = 16.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 120ðŸ’Ž" data-price="16000">+ Keranjang</button>
+                            <span>120 💎 = 16.000</span>
+                            <button class="add-to-cart" data-name="Free Fire 120 💎" data-price="16000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>130ðŸ’Ž = 18.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 130ðŸ’Ž" data-price="18000">+ Keranjang</button>
+                            <span>130 💎 = 18.000</span>
+                            <button class="add-to-cart" data-name="Free Fire 130 💎" data-price="18000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>150ðŸ’Ž = 19.900</span>
-                            <button class="add-to-cart" data-name="Free Fire 150ðŸ’Ž" data-price="19900">+ Keranjang</button>
+                            <span>150 💎 = 19.900</span>
+                            <button class="add-to-cart" data-name="Free Fire 150 💎" data-price="19900">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>160ðŸ’Ž = 21.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 160ðŸ’Ž" data-price="21000">+ Keranjang</button>
+                            <span>160 💎 = 21.000</span>
+                            <button class="add-to-cart" data-name="Free Fire 160 💎" data-price="21000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>180ðŸ’Ž = 23.999</span>
-                            <button class="add-to-cart" data-name="Free Fire 180ðŸ’Ž" data-price="23999">+ Keranjang</button>
+                            <span>180 💎 = 23.999</span>
+                            <button class="add-to-cart" data-name="Free Fire 180 💎" data-price="23999">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>190ðŸ’Ž = 25.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 190ðŸ’Ž" data-price="25000">+ Keranjang</button>
+                            <span>190 💎 = 25.000</span>
+                            <button class="add-to-cart" data-name="Free Fire 190 💎" data-price="25000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>200ðŸ’Ž = 26.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 200ðŸ’Ž" data-price="26000">+ Keranjang</button>
+                            <span>200 💎 = 26.000</span>
+                            <button class="add-to-cart" data-name="Free Fire 200 💎" data-price="26000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>210ðŸ’Ž = 27.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 210ðŸ’Ž" data-price="27000">+ Keranjang</button>
+                            <span>210 💎 = 27.000</span>
+                            <button class="add-to-cart" data-name="Free Fire 210 💎" data-price="27000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
                             <span>Membership Mingguan = 28.000</span>
                             <button class="add-to-cart" data-name="Free Fire Membership Mingguan" data-price="28000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>250ðŸ’Ž = 32.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 250ðŸ’Ž" data-price="32000">+ Keranjang</button>
+                            <span>250 💎 = 32.000</span>
+                            <button class="add-to-cart" data-name="Free Fire 250 💎" data-price="32000">+ Keranjang</button>
                         </div>
                     </div>
                 </div>
@@ -989,112 +991,112 @@
                 <div class="product-card" data-category="mobilelegends">
                     <div class="product-header">
                         <h3>Mobile Legends</h3>
-                        <p>mlbb | ê­‘â±ºá‘²ð—‚á¥£ð–¾ á¥£ð–¾ð—€ð–¾ð“£á‘¯ð—ŒðŸ’¸ðŸ’¸</p>
+                        <p>MLBB | Diamonds 💎💸</p>
                     </div>
                     <div class="product-body">
                         <div class="price-item">
-                            <span>14ðŸ’Ž = 4.500</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 14ðŸ’Ž" data-price="4500">+ Keranjang</button>
+                            <span>14 💎 = 4.500</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 14 💎" data-price="4500">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>19ðŸ’Ž = 6.400</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 19ðŸ’Ž" data-price="6400">+ Keranjang</button>
+                            <span>19 💎 = 6.400</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 19 💎" data-price="6400">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>36ðŸ’Ž = 10.500</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 36ðŸ’Ž" data-price="10500">+ Keranjang</button>
+                            <span>36 💎 = 10.500</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 36 💎" data-price="10500">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>44ðŸ’Ž = 13.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 44ðŸ’Ž" data-price="13000">+ Keranjang</button>
+                            <span>44 💎 = 13.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 44 💎" data-price="13000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>50ðŸ’Ž = 14.500</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 50ðŸ’Ž" data-price="14500">+ Keranjang</button>
+                            <span>50 💎 = 14.500</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 50 💎" data-price="14500">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>59ðŸ’Ž = 16.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 59ðŸ’Ž" data-price="16000">+ Keranjang</button>
+                            <span>59 💎 = 16.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 59 💎" data-price="16000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>65ðŸ’Ž = 18.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 65ðŸ’Ž" data-price="18000">+ Keranjang</button>
+                            <span>65 💎 = 18.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 65 💎" data-price="18000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>74ðŸ’Ž = 20.300</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 74ðŸ’Ž" data-price="20300">+ Keranjang</button>
+                            <span>74 💎 = 20.300</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 74 💎" data-price="20300">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>85ðŸ’Ž = 23.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 85ðŸ’Ž" data-price="23000">+ Keranjang</button>
+                            <span>85 💎 = 23.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 85 💎" data-price="23000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>112ðŸ’Ž = 31.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 112ðŸ’Ž" data-price="31000">+ Keranjang</button>
+                            <span>112 💎 = 31.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 112 💎" data-price="31000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>172ðŸ’Ž = 36.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 172ðŸ’Ž" data-price="36000">+ Keranjang</button>
+                            <span>172 💎 = 36.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 172 💎" data-price="36000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>185ðŸ’Ž = 50.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 185ðŸ’Ž" data-price="50000">+ Keranjang</button>
+                            <span>185 💎 = 50.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 185 💎" data-price="50000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>257ðŸ’Ž = 55.500</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 257ðŸ’Ž" data-price="55500">+ Keranjang</button>
+                            <span>257 💎 = 55.500</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 257 💎" data-price="55500">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>284ðŸ’Ž = 75.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 284ðŸ’Ž" data-price="75000">+ Keranjang</button>
+                            <span>284 💎 = 75.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 284 💎" data-price="75000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>296ðŸ’Ž = 78.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 296ðŸ’Ž" data-price="78000">+ Keranjang</button>
+                            <span>296 💎 = 78.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 296 💎" data-price="78000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>344ðŸ’Ž = 92.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 344ðŸ’Ž" data-price="92000">+ Keranjang</button>
+                            <span>344 💎 = 92.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 344 💎" data-price="92000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>370ðŸ’Ž = 97.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 370ðŸ’Ž" data-price="97000">+ Keranjang</button>
+                            <span>370 💎 = 97.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 370 💎" data-price="97000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>429ðŸ’Ž = 111.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 429ðŸ’Ž" data-price="111000">+ Keranjang</button>
+                            <span>429 💎 = 111.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 429 💎" data-price="111000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>514ðŸ’Ž = 135.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 514ðŸ’Ž" data-price="135000">+ Keranjang</button>
+                            <span>514 💎 = 135.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 514 💎" data-price="135000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>568ðŸ’Ž = 143.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 568ðŸ’Ž" data-price="143000">+ Keranjang</button>
+                            <span>568 💎 = 143.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 568 💎" data-price="143000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>600ðŸ’Ž = 154.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 600ðŸ’Ž" data-price="154000">+ Keranjang</button>
+                            <span>600 💎 = 154.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 600 💎" data-price="154000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>716ðŸ’Ž = 184.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 716ðŸ’Ž" data-price="184000">+ Keranjang</button>
+                            <span>716 💎 = 184.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 716 💎" data-price="184000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>792ðŸ’Ž = 206.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 792ðŸ’Ž" data-price="206000">+ Keranjang</button>
+                            <span>792 💎 = 206.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 792 💎" data-price="206000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>878ðŸ’Ž = 222.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 878ðŸ’Ž" data-price="222000">+ Keranjang</button>
+                            <span>878 💎 = 222.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 878 💎" data-price="222000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>963ðŸ’Ž = 242.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 963ðŸ’Ž" data-price="242000">+ Keranjang</button>
+                            <span>963 💎 = 242.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 963 💎" data-price="242000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>1050ðŸ’Ž = 265.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 1050ðŸ’Ž" data-price="265000">+ Keranjang</button>
+                            <span>1050 💎 = 265.000</span>
+                            <button class="add-to-cart" data-name="Mobile Legends 1050 💎" data-price="265000">+ Keranjang</button>
                         </div>
                     </div>
                 </div>
@@ -1103,28 +1105,28 @@
                 <div class="product-card" data-category="roblox">
                     <div class="product-header">
                         <h3>Roblox</h3>
-                        <p>Roblox | Robloxð—ŒðŸ’¸ðŸ’¸</p>
+                        <p>Roblox | Robux 💸</p>
                     </div>
                     <div class="product-body">
                         <div class="price-item">
-                            <span>100rbx = 18.000</span>
-                            <button class="add-to-cart" data-name="Roblox 100rbx" data-price="18000">+ Keranjang</button>
+                            <span>100 Robux = 18.000</span>
+                            <button class="add-to-cart" data-name="Roblox 100 Robux" data-price="18000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>400RBX = 77.000</span>
-                            <button class="add-to-cart" data-name="Roblox 400RBX" data-price="77000">+ Keranjang</button>
+                            <span>400 Robux = 77.000</span>
+                            <button class="add-to-cart" data-name="Roblox 400 Robux" data-price="77000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
                             <span>Roblox Gift Card = 102.000</span>
-                            <button class="add-to-cart" data-name="Roblox Gift Card 102rb" data-price="102000">+ Keranjang</button>
+                            <button class="add-to-cart" data-name="Roblox Gift Card" data-price="102000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
                             <span>Roblox Gift Card = 203.000</span>
-                            <button class="add-to-cart" data-name="Roblox Gift Card 203rb" data-price="203000">+ Keranjang</button>
+                            <button class="add-to-cart" data-name="Roblox Gift Card" data-price="203000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
                             <span>Roblox Gift Card = 505.000</span>
-                            <button class="add-to-cart" data-name="Roblox Gift Card 505rb" data-price="505000">+ Keranjang</button>
+                            <button class="add-to-cart" data-name="Roblox Gift Card" data-price="505000">+ Keranjang</button>
                         </div>
                     </div>
                 </div>
@@ -1133,36 +1135,36 @@
                 <div class="product-card" data-category="cod">
                     <div class="product-header">
                         <h3>Call of Duty Mobile</h3>
-                        <p>COD | CODM | Call of Duty MOBILE ðŸ’¸ðŸ’¸</p>
+                        <p>CODM | CP 💎</p>
                     </div>
                     <div class="product-body">
                         <div class="price-item">
-                            <span>26CP = 5.500</span>
-                            <button class="add-to-cart" data-name="COD 26CP" data-price="5500">+ Keranjang</button>
+                            <span>26 CP = 5.500</span>
+                            <button class="add-to-cart" data-name="COD 26 CP" data-price="5500">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>62CP = 9.800</span>
-                            <button class="add-to-cart" data-name="COD 62CP" data-price="9800">+ Keranjang</button>
+                            <span>62 CP = 9.800</span>
+                            <button class="add-to-cart" data-name="COD 62 CP" data-price="9800">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>127CP = 18.800</span>
-                            <button class="add-to-cart" data-name="COD 127CP" data-price="18800">+ Keranjang</button>
+                            <span>127 CP = 18.800</span>
+                            <button class="add-to-cart" data-name="COD 127 CP" data-price="18800">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>320CP = 49.000</span>
-                            <button class="add-to-cart" data-name="COD 320CP" data-price="49000">+ Keranjang</button>
+                            <span>320 CP = 49.000</span>
+                            <button class="add-to-cart" data-name="COD 320 CP" data-price="49000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>528CP = 96.000</span>
-                            <button class="add-to-cart" data-name="COD 528CP" data-price="96000">+ Keranjang</button>
+                            <span>528 CP = 96.000</span>
+                            <button class="add-to-cart" data-name="COD 528 CP" data-price="96000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>1056CP = 185.000</span>
-                            <button class="add-to-cart" data-name="COD 1056CP" data-price="185000">+ Keranjang</button>
+                            <span>1056 CP = 185.000</span>
+                            <button class="add-to-cart" data-name="COD 1056 CP" data-price="185000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>1584CP = 290.000</span>
-                            <button class="add-to-cart" data-name="COD 1584CP" data-price="290000">+ Keranjang</button>
+                            <span>1584 CP = 290.000</span>
+                            <button class="add-to-cart" data-name="COD 1584 CP" data-price="290000">+ Keranjang</button>
                         </div>
                     </div>
                 </div>
@@ -1171,48 +1173,48 @@
                 <div class="product-card" data-category="pubg">
                     <div class="product-header">
                         <h3>PUBG Mobile</h3>
-                        <p>Pubg | UCðŸ’¸ðŸ’¸</p>
+                        <p>PUBG | UC 💎</p>
                     </div>
                     <div class="product-body">
                         <div class="price-item">
-                            <span>52UC = 16.000</span>
-                            <button class="add-to-cart" data-name="PUBG 52UC" data-price="16000">+ Keranjang</button>
+                            <span>52 UC = 16.000</span>
+                            <button class="add-to-cart" data-name="PUBG 52 UC" data-price="16000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>62UC = 18.000</span>
-                            <button class="add-to-cart" data-name="PUBG 62UC" data-price="18000">+ Keranjang</button>
+                            <span>62 UC = 18.000</span>
+                            <button class="add-to-cart" data-name="PUBG 62 UC" data-price="18000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>263UC = 74.000</span>
-                            <button class="add-to-cart" data-name="PUBG 263UC" data-price="74000">+ Keranjang</button>
+                            <span>263 UC = 74.000</span>
+                            <button class="add-to-cart" data-name="PUBG 263 UC" data-price="74000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>500UC = 112.000</span>
-                            <button class="add-to-cart" data-name="PUBG 500UC" data-price="112000">+ Keranjang</button>
+                            <span>500 UC = 112.000</span>
+                            <button class="add-to-cart" data-name="PUBG 500 UC" data-price="112000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>700UC = 164.000</span>
-                            <button class="add-to-cart" data-name="PUBG 700UC" data-price="164000">+ Keranjang</button>
+                            <span>700 UC = 164.000</span>
+                            <button class="add-to-cart" data-name="PUBG 700 UC" data-price="164000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>788UC = 193.000</span>
-                            <button class="add-to-cart" data-name="PUBG 788UC" data-price="193000">+ Keranjang</button>
+                            <span>788 UC = 193.000</span>
+                            <button class="add-to-cart" data-name="PUBG 788 UC" data-price="193000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>1000UC = 242.000</span>
-                            <button class="add-to-cart" data-name="PUBG 1000UC" data-price="242000">+ Keranjang</button>
+                            <span>1000 UC = 242.000</span>
+                            <button class="add-to-cart" data-name="PUBG 1000 UC" data-price="242000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>1100UC = 250.000</span>
-                            <button class="add-to-cart" data-name="PUBG 1100UC" data-price="250000">+ Keranjang</button>
+                            <span>1100 UC = 250.000</span>
+                            <button class="add-to-cart" data-name="PUBG 1100 UC" data-price="250000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>2425UC = 517.000</span>
-                            <button class="add-to-cart" data-name="PUBG 2425UC" data-price="517000">+ Keranjang</button>
+                            <span>2425 UC = 517.000</span>
+                            <button class="add-to-cart" data-name="PUBG 2425 UC" data-price="517000">+ Keranjang</button>
                         </div>
                         <div class="price-item">
-                            <span>2875UC = 625.000</span>
-                            <button class="add-to-cart" data-name="PUBG 2875UC" data-price="625000">+ Keranjang</button>
+                            <span>2875 UC = 625.000</span>
+                            <button class="add-to-cart" data-name="PUBG 2875 UC" data-price="625000">+ Keranjang</button>
                         </div>
                     </div>
                 </div>
@@ -1453,30 +1455,25 @@
         const checkoutBtn = document.getElementById('checkoutBtn');
         const addToCartButtons = document.querySelectorAll('.add-to-cart');
         
-        // Open cart modal
         cartBtn.addEventListener('click', () => {
             cartModal.style.display = 'flex';
         });
         
-        // Close cart modal
         closeCart.addEventListener('click', () => {
             cartModal.style.display = 'none';
         });
         
-        // Close modal when clicking outside
         window.addEventListener('click', (e) => {
             if (e.target === cartModal) {
                 cartModal.style.display = 'none';
             }
         });
         
-        // Add to cart functionality
         addToCartButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const name = button.getAttribute('data-name');
                 const price = parseInt(button.getAttribute('data-price'));
                 
-                // Check if item already in cart
                 const existingItem = cart.find(item => item.name === name);
                 
                 if (existingItem) {
@@ -1494,7 +1491,6 @@
             });
         });
         
-        // Update cart display
         function updateCart() {
             cartItems.innerHTML = '';
             let total = 0;
@@ -1526,7 +1522,6 @@
             cartTotal.textContent = `Rp ${total.toLocaleString('id-ID')}`;
             cartBadge.textContent = itemCount;
             
-            // Add event listeners to cart item buttons
             document.querySelectorAll('.decrease-quantity').forEach(button => {
                 button.addEventListener('click', (e) => {
                     const index = e.target.getAttribute('data-index');
@@ -1556,7 +1551,6 @@
             });
         }
         
-        // Clear cart
         clearCart.addEventListener('click', () => {
             if (cart.length > 0) {
                 if (confirm('Apakah Anda yakin ingin mengosongkan keranjang?')) {
@@ -1567,7 +1561,6 @@
             }
         });
         
-        // Checkout via WhatsApp
         checkoutBtn.addEventListener('click', () => {
             if (cart.length === 0) {
                 alert('Keranjang belanja Anda kosong!');
@@ -1592,7 +1585,6 @@
             window.open(whatsappUrl, '_blank');
         });
         
-        // Show notification
         function showNotification(message) {
             const notification = document.createElement('div');
             notification.style.cssText = `
@@ -1609,18 +1601,13 @@
                 transition: transform 0.3s ease;
             `;
             notification.textContent = message;
-            
             document.body.appendChild(notification);
             
-            setTimeout(() => {
-                notification.style.transform = 'translateX(0)';
-            }, 100);
+            setTimeout(() => { notification.style.transform = 'translateX(0)'; }, 100);
             
             setTimeout(() => {
                 notification.style.transform = 'translateX(100%)';
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
+                setTimeout(() => { document.body.removeChild(notification); }, 300);
             }, 3000);
         }
         
@@ -1631,11 +1618,9 @@
         
         searchInput.addEventListener('input', () => {
             const searchTerm = searchInput.value.toLowerCase();
-            
             productCards.forEach(card => {
                 const productName = card.querySelector('.product-header h3').textContent.toLowerCase();
                 const productDesc = card.querySelector('.product-header p').textContent.toLowerCase();
-                
                 if (productName.includes(searchTerm) || productDesc.includes(searchTerm)) {
                     card.style.display = 'block';
                 } else {
@@ -1648,9 +1633,7 @@
             button.addEventListener('click', () => {
                 categoryButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                
                 const category = button.getAttribute('data-category');
-                
                 productCards.forEach(card => {
                     if (category === 'all' || card.getAttribute('data-category') === category) {
                         card.style.display = 'block';
@@ -1737,7 +1720,7 @@
             }
         }
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
