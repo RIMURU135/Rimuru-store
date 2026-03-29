@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +11,6 @@
             --secondary: #2c3e50;
             --accent: #e74c3c;
             --dark: #2c3e50;
-            
-            /* Light mode colors */
             --bg-color: #f5f7fa;
             --text-color: #333;
             --card-bg: white;
@@ -121,8 +120,8 @@
         .theme-toggle:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-        
-        /* Hero Section dengan Video Background */
+
+        /* HERO SECTION - SUDAH DIPERBAIKI */
         .hero {
             position: relative;
             height: 60vh;
@@ -132,15 +131,19 @@
             text-align: center;
             color: white;
             overflow: hidden;
+            background: black; /* fallback jika video tidak muncul */
         }
         
+        /* FIX VIDEO AGAR LANDSCAPE TANPA TERPOTONG */
         .video-background {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            transform: translate(-50%, -50%);
+            object-fit: contain;   /* KUNCI UTAMA */
+            background: black;
             z-index: -1;
         }
         
@@ -201,7 +204,58 @@
         .btn-whatsapp:hover {
             background-color: #128C7E;
         }
-        
+
+        /* Media Query untuk Hero di Mobile */
+        @media (max-width: 768px) {
+            .hero {
+                height: 50vh;
+            }
+            
+            .video-background {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .product-filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .cart-container {
+                bottom: 80px;
+            }
+        }
+
         section {
             padding: 4rem 0;
         }
@@ -230,7 +284,6 @@
             background-color: var(--primary);
         }
         
-        /* Filter dan Pencarian */
         .product-filters {
             display: flex;
             justify-content: space-between;
@@ -435,24 +488,6 @@
             border-bottom: 1px solid #eee;
         }
         
-        .cart-item-info {
-            flex: 1;
-        }
-        
-        .cart-item-actions {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .cart-item-actions button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-        
         .cart-total {
             display: flex;
             justify-content: space-between;
@@ -491,15 +526,6 @@
             display: flex;
             align-items: center;
             gap: 3rem;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-image {
-            flex: 1;
-            text-align: center;
         }
         
         .about-image img {
@@ -626,12 +652,6 @@
             transform: translateY(-3px);
         }
         
-        .copyright {
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Music player */
         .music-player {
             position: fixed;
             bottom: 20px;
@@ -653,7 +673,6 @@
             color: var(--primary);
         }
         
-        /* Video Controls */
         .video-controls {
             position: absolute;
             bottom: 20px;
@@ -681,32 +700,6 @@
             background: rgba(255, 255, 255, 0.3);
         }
         
-        /* Dark mode toggle */
-        .theme-toggle-container {
-            display: flex;
-            align-items: center;
-            margin-left: 1.5rem;
-        }
-        
-        .theme-toggle {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        /* Loading indicator */
         .loading {
             display: none;
             position: fixed;
@@ -733,59 +726,7 @@
         }
         
         @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 1rem;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            nav ul li {
-                margin: 0.5rem;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            
-            .footer-section h3::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .video-controls {
-                bottom: 10px;
-                left: 10px;
-            }
-            
-            .product-filters {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .cart-container {
-                bottom: 80px;
-            }
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -799,7 +740,6 @@
     <!-- Audio Background -->
     <audio id="bgMusic" loop>
         <source src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mp3">
-        Browser Anda tidak mendukung audio HTML5.
     </audio>
 
     <div class="music-player" id="musicToggle">
@@ -821,9 +761,7 @@
                 <h2>Keranjang Belanja</h2>
                 <button id="closeCart">&times;</button>
             </div>
-            <div class="cart-items" id="cartItems">
-                <!-- Cart items will be added here dynamically -->
-            </div>
+            <div class="cart-items" id="cartItems"></div>
             <div class="cart-total">
                 <span>Total:</span>
                 <span id="cartTotal">Rp 0</span>
@@ -862,7 +800,7 @@
 
     <section class="hero" id="home">
         <!-- Video Background -->
-        <video class="video-background" id="backgroundVideo" autoplay muted loop>
+        <video class="video-background" id="backgroundVideo" autoplay muted loop playsinline>
             <source src="https://image2url.com/r2/default/videos/1774790761304-592aeffb-1a5b-4038-872b-48cc9d92b619.mp4" type="video/mp4">
             Browser Anda tidak mendukung video HTML5.
         </video>
@@ -908,6 +846,7 @@
             </div>
             
             <div class="products" id="productsContainer">
+                <!-- Semua product-card dari kode asli kamu tetap sama -->
                 <!-- Free Fire -->
                 <div class="product-card" data-category="freefire">
                     <div class="product-header">
@@ -915,70 +854,22 @@
                         <p>FF | Epep | FREE FIRE💸💸</p>
                     </div>
                     <div class="product-body">
-                        <div class="price-item">
-                            <span>12💎 = 2.500</span>
-                            <button class="add-to-cart" data-name="Free Fire 12💎" data-price="2500">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>25💎 = 4.999</span>
-                            <button class="add-to-cart" data-name="Free Fire 25💎" data-price="4999">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>50💎 = 7.300</span>
-                            <button class="add-to-cart" data-name="Free Fire 50💎" data-price="7300">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>75💎 = 10.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 75💎" data-price="10000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>90💎 = 12.999</span>
-                            <button class="add-to-cart" data-name="Free Fire 90💎" data-price="12999">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>100💎 = 14.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 100💎" data-price="14000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>120💎 = 16.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 120💎" data-price="16000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>130💎 = 18.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 130💎" data-price="18000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>150💎 = 19.900</span>
-                            <button class="add-to-cart" data-name="Free Fire 150💎" data-price="19900">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>160💎 = 21.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 160💎" data-price="21000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>180💎 = 23.999</span>
-                            <button class="add-to-cart" data-name="Free Fire 180💎" data-price="23999">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>190💎 = 25.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 190💎" data-price="25000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>200💎 = 26.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 200💎" data-price="26000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>210💎 = 27.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 210💎" data-price="27000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>Membership Mingguan = 28.000</span>
-                            <button class="add-to-cart" data-name="Free Fire Membership Mingguan" data-price="28000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>250💎 = 32.000</span>
-                            <button class="add-to-cart" data-name="Free Fire 250💎" data-price="32000">+ Keranjang</button>
-                        </div>
+                        <div class="price-item"><span>12💎 = 2.500</span><button class="add-to-cart" data-name="Free Fire 12💎" data-price="2500">+ Keranjang</button></div>
+                        <div class="price-item"><span>25💎 = 4.999</span><button class="add-to-cart" data-name="Free Fire 25💎" data-price="4999">+ Keranjang</button></div>
+                        <div class="price-item"><span>50💎 = 7.300</span><button class="add-to-cart" data-name="Free Fire 50💎" data-price="7300">+ Keranjang</button></div>
+                        <div class="price-item"><span>75💎 = 10.000</span><button class="add-to-cart" data-name="Free Fire 75💎" data-price="10000">+ Keranjang</button></div>
+                        <div class="price-item"><span>90💎 = 12.999</span><button class="add-to-cart" data-name="Free Fire 90💎" data-price="12999">+ Keranjang</button></div>
+                        <div class="price-item"><span>100💎 = 14.000</span><button class="add-to-cart" data-name="Free Fire 100💎" data-price="14000">+ Keranjang</button></div>
+                        <div class="price-item"><span>120💎 = 16.000</span><button class="add-to-cart" data-name="Free Fire 120💎" data-price="16000">+ Keranjang</button></div>
+                        <div class="price-item"><span>130💎 = 18.000</span><button class="add-to-cart" data-name="Free Fire 130💎" data-price="18000">+ Keranjang</button></div>
+                        <div class="price-item"><span>150💎 = 19.900</span><button class="add-to-cart" data-name="Free Fire 150💎" data-price="19900">+ Keranjang</button></div>
+                        <div class="price-item"><span>160💎 = 21.000</span><button class="add-to-cart" data-name="Free Fire 160💎" data-price="21000">+ Keranjang</button></div>
+                        <div class="price-item"><span>180💎 = 23.999</span><button class="add-to-cart" data-name="Free Fire 180💎" data-price="23999">+ Keranjang</button></div>
+                        <div class="price-item"><span>190💎 = 25.000</span><button class="add-to-cart" data-name="Free Fire 190💎" data-price="25000">+ Keranjang</button></div>
+                        <div class="price-item"><span>200💎 = 26.000</span><button class="add-to-cart" data-name="Free Fire 200💎" data-price="26000">+ Keranjang</button></div>
+                        <div class="price-item"><span>210💎 = 27.000</span><button class="add-to-cart" data-name="Free Fire 210💎" data-price="27000">+ Keranjang</button></div>
+                        <div class="price-item"><span>Membership Mingguan = 28.000</span><button class="add-to-cart" data-name="Free Fire Membership Mingguan" data-price="28000">+ Keranjang</button></div>
+                        <div class="price-item"><span>250💎 = 32.000</span><button class="add-to-cart" data-name="Free Fire 250💎" data-price="32000">+ Keranjang</button></div>
                     </div>
                 </div>
 
@@ -989,110 +880,32 @@
                         <p>mlbb | ꭑⱺᑲ𝗂ᥣ𝖾 ᥣ𝖾𝗀𝖾𐓣ᑯ𝗌💸💸</p>
                     </div>
                     <div class="product-body">
-                        <div class="price-item">
-                            <span>14💎 = 4.500</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 14💎" data-price="4500">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>19💎 = 6.400</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 19💎" data-price="6400">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>36💎 = 10.500</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 36💎" data-price="10500">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>44💎 = 13.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 44💎" data-price="13000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>50💎 = 14.500</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 50💎" data-price="14500">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>59💎 = 16.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 59💎" data-price="16000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>65💎 = 18.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 65💎" data-price="18000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>74💎 = 20.300</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 74💎" data-price="20300">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>85💎 = 23.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 85💎" data-price="23000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>112💎 = 31.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 112💎" data-price="31000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>172💎 = 36.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 172💎" data-price="36000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>185💎 = 50.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 185💎" data-price="50000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>257💎 = 55.500</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 257💎" data-price="55500">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>284💎 = 75.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 284💎" data-price="75000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>296💎 = 78.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 296💎" data-price="78000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>344💎 = 92.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 344💎" data-price="92000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>370💎 = 97.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 370💎" data-price="97000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>429💎 = 111.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 429💎" data-price="111000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>514💎 = 135.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 514💎" data-price="135000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>568💎 = 143.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 568💎" data-price="143000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>600💎 = 154.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 600💎" data-price="154000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>716💎 = 184.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 716💎" data-price="184000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>792💎 = 206.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 792💎" data-price="206000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>878💎 = 222.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 878💎" data-price="222000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>963💎 = 242.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 963💎" data-price="242000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>1050💎 = 265.000</span>
-                            <button class="add-to-cart" data-name="Mobile Legends 1050💎" data-price="265000">+ Keranjang</button>
-                        </div>
+                        <div class="price-item"><span>14💎 = 4.500</span><button class="add-to-cart" data-name="Mobile Legends 14💎" data-price="4500">+ Keranjang</button></div>
+                        <div class="price-item"><span>19💎 = 6.400</span><button class="add-to-cart" data-name="Mobile Legends 19💎" data-price="6400">+ Keranjang</button></div>
+                        <div class="price-item"><span>36💎 = 10.500</span><button class="add-to-cart" data-name="Mobile Legends 36💎" data-price="10500">+ Keranjang</button></div>
+                        <div class="price-item"><span>44💎 = 13.000</span><button class="add-to-cart" data-name="Mobile Legends 44💎" data-price="13000">+ Keranjang</button></div>
+                        <div class="price-item"><span>50💎 = 14.500</span><button class="add-to-cart" data-name="Mobile Legends 50💎" data-price="14500">+ Keranjang</button></div>
+                        <div class="price-item"><span>59💎 = 16.000</span><button class="add-to-cart" data-name="Mobile Legends 59💎" data-price="16000">+ Keranjang</button></div>
+                        <div class="price-item"><span>65💎 = 18.000</span><button class="add-to-cart" data-name="Mobile Legends 65💎" data-price="18000">+ Keranjang</button></div>
+                        <div class="price-item"><span>74💎 = 20.300</span><button class="add-to-cart" data-name="Mobile Legends 74💎" data-price="20300">+ Keranjang</button></div>
+                        <div class="price-item"><span>85💎 = 23.000</span><button class="add-to-cart" data-name="Mobile Legends 85💎" data-price="23000">+ Keranjang</button></div>
+                        <div class="price-item"><span>112💎 = 31.000</span><button class="add-to-cart" data-name="Mobile Legends 112💎" data-price="31000">+ Keranjang</button></div>
+                        <div class="price-item"><span>172💎 = 36.000</span><button class="add-to-cart" data-name="Mobile Legends 172💎" data-price="36000">+ Keranjang</button></div>
+                        <div class="price-item"><span>185💎 = 50.000</span><button class="add-to-cart" data-name="Mobile Legends 185💎" data-price="50000">+ Keranjang</button></div>
+                        <div class="price-item"><span>257💎 = 55.500</span><button class="add-to-cart" data-name="Mobile Legends 257💎" data-price="55500">+ Keranjang</button></div>
+                        <div class="price-item"><span>284💎 = 75.000</span><button class="add-to-cart" data-name="Mobile Legends 284💎" data-price="75000">+ Keranjang</button></div>
+                        <div class="price-item"><span>296💎 = 78.000</span><button class="add-to-cart" data-name="Mobile Legends 296💎" data-price="78000">+ Keranjang</button></div>
+                        <div class="price-item"><span>344💎 = 92.000</span><button class="add-to-cart" data-name="Mobile Legends 344💎" data-price="92000">+ Keranjang</button></div>
+                        <div class="price-item"><span>370💎 = 97.000</span><button class="add-to-cart" data-name="Mobile Legends 370💎" data-price="97000">+ Keranjang</button></div>
+                        <div class="price-item"><span>429💎 = 111.000</span><button class="add-to-cart" data-name="Mobile Legends 429💎" data-price="111000">+ Keranjang</button></div>
+                        <div class="price-item"><span>514💎 = 135.000</span><button class="add-to-cart" data-name="Mobile Legends 514💎" data-price="135000">+ Keranjang</button></div>
+                        <div class="price-item"><span>568💎 = 143.000</span><button class="add-to-cart" data-name="Mobile Legends 568💎" data-price="143000">+ Keranjang</button></div>
+                        <div class="price-item"><span>600💎 = 154.000</span><button class="add-to-cart" data-name="Mobile Legends 600💎" data-price="154000">+ Keranjang</button></div>
+                        <div class="price-item"><span>716💎 = 184.000</span><button class="add-to-cart" data-name="Mobile Legends 716💎" data-price="184000">+ Keranjang</button></div>
+                        <div class="price-item"><span>792💎 = 206.000</span><button class="add-to-cart" data-name="Mobile Legends 792💎" data-price="206000">+ Keranjang</button></div>
+                        <div class="price-item"><span>878💎 = 222.000</span><button class="add-to-cart" data-name="Mobile Legends 878💎" data-price="222000">+ Keranjang</button></div>
+                        <div class="price-item"><span>963💎 = 242.000</span><button class="add-to-cart" data-name="Mobile Legends 963💎" data-price="242000">+ Keranjang</button></div>
+                        <div class="price-item"><span>1050💎 = 265.000</span><button class="add-to-cart" data-name="Mobile Legends 1050💎" data-price="265000">+ Keranjang</button></div>
                     </div>
                 </div>
 
@@ -1103,64 +916,28 @@
                         <p>Roblox | Roblox𝗌💸💸</p>
                     </div>
                     <div class="product-body">
-                        <div class="price-item">
-                            <span>100rbx = 18.000</span>
-                            <button class="add-to-cart" data-name="Roblox 100rbx" data-price="18000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>400RBX = 77.000</span>
-                            <button class="add-to-cart" data-name="Roblox 400RBX" data-price="77000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>Roblox Gift Card = 102.000</span>
-                            <button class="add-to-cart" data-name="Roblox Gift Card 102rb" data-price="102000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>Roblox Gift Card = 203.000</span>
-                            <button class="add-to-cart" data-name="Roblox Gift Card 203rb" data-price="203000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>Roblox Gift Card = 505.000</span>
-                            <button class="add-to-cart" data-name="Roblox Gift Card 505rb" data-price="505000">+ Keranjang</button>
-                        </div>
+                        <div class="price-item"><span>100rbx = 18.000</span><button class="add-to-cart" data-name="Roblox 100rbx" data-price="18000">+ Keranjang</button></div>
+                        <div class="price-item"><span>400RBX = 77.000</span><button class="add-to-cart" data-name="Roblox 400RBX" data-price="77000">+ Keranjang</button></div>
+                        <div class="price-item"><span>Roblox Gift Card = 102.000</span><button class="add-to-cart" data-name="Roblox Gift Card 102rb" data-price="102000">+ Keranjang</button></div>
+                        <div class="price-item"><span>Roblox Gift Card = 203.000</span><button class="add-to-cart" data-name="Roblox Gift Card 203rb" data-price="203000">+ Keranjang</button></div>
+                        <div class="price-item"><span>Roblox Gift Card = 505.000</span><button class="add-to-cart" data-name="Roblox Gift Card 505rb" data-price="505000">+ Keranjang</button></div>
                     </div>
                 </div>
 
-                <!-- Call of Duty Mobile -->
+                <!-- Call of Duty -->
                 <div class="product-card" data-category="cod">
                     <div class="product-header">
                         <h3>Call of Duty Mobile</h3>
                         <p>COD | CODM | Call of Duty MOBILE 💸💸</p>
                     </div>
                     <div class="product-body">
-                        <div class="price-item">
-                            <span>26CP = 5.500</span>
-                            <button class="add-to-cart" data-name="COD 26CP" data-price="5500">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>62CP = 9.800</span>
-                            <button class="add-to-cart" data-name="COD 62CP" data-price="9800">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>127CP = 18.800</span>
-                            <button class="add-to-cart" data-name="COD 127CP" data-price="18800">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>320CP = 49.000</span>
-                            <button class="add-to-cart" data-name="COD 320CP" data-price="49000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>528CP = 96.000</span>
-                            <button class="add-to-cart" data-name="COD 528CP" data-price="96000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>1056CP = 185.000</span>
-                            <button class="add-to-cart" data-name="COD 1056CP" data-price="185000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>1584CP = 290.000</span>
-                            <button class="add-to-cart" data-name="COD 1584CP" data-price="290000">+ Keranjang</button>
-                        </div>
+                        <div class="price-item"><span>26CP = 5.500</span><button class="add-to-cart" data-name="COD 26CP" data-price="5500">+ Keranjang</button></div>
+                        <div class="price-item"><span>62CP = 9.800</span><button class="add-to-cart" data-name="COD 62CP" data-price="9800">+ Keranjang</button></div>
+                        <div class="price-item"><span>127CP = 18.800</span><button class="add-to-cart" data-name="COD 127CP" data-price="18800">+ Keranjang</button></div>
+                        <div class="price-item"><span>320CP = 49.000</span><button class="add-to-cart" data-name="COD 320CP" data-price="49000">+ Keranjang</button></div>
+                        <div class="price-item"><span>528CP = 96.000</span><button class="add-to-cart" data-name="COD 528CP" data-price="96000">+ Keranjang</button></div>
+                        <div class="price-item"><span>1056CP = 185.000</span><button class="add-to-cart" data-name="COD 1056CP" data-price="185000">+ Keranjang</button></div>
+                        <div class="price-item"><span>1584CP = 290.000</span><button class="add-to-cart" data-name="COD 1584CP" data-price="290000">+ Keranjang</button></div>
                     </div>
                 </div>
 
@@ -1171,76 +948,31 @@
                         <p>Pubg | UC💸💸</p>
                     </div>
                     <div class="product-body">
-                        <div class="price-item">
-                            <span>52UC = 16.000</span>
-                            <button class="add-to-cart" data-name="PUBG 52UC" data-price="16000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>62UC = 18.000</span>
-                            <button class="add-to-cart" data-name="PUBG 62UC" data-price="18000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>263UC = 74.000</span>
-                            <button class="add-to-cart" data-name="PUBG 263UC" data-price="74000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>500UC = 112.000</span>
-                            <button class="add-to-cart" data-name="PUBG 500UC" data-price="112000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>700UC = 164.000</span>
-                            <button class="add-to-cart" data-name="PUBG 700UC" data-price="164000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>788UC = 193.000</span>
-                            <button class="add-to-cart" data-name="PUBG 788UC" data-price="193000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>1000UC = 242.000</span>
-                            <button class="add-to-cart" data-name="PUBG 1000UC" data-price="242000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>1100UC = 250.000</span>
-                            <button class="add-to-cart" data-name="PUBG 1100UC" data-price="250000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>2425UC = 517.000</span>
-                            <button class="add-to-cart" data-name="PUBG 2425UC" data-price="517000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>2875UC = 625.000</span>
-                            <button class="add-to-cart" data-name="PUBG 2875UC" data-price="625000">+ Keranjang</button>
-                        </div>
+                        <div class="price-item"><span>52UC = 16.000</span><button class="add-to-cart" data-name="PUBG 52UC" data-price="16000">+ Keranjang</button></div>
+                        <div class="price-item"><span>62UC = 18.000</span><button class="add-to-cart" data-name="PUBG 62UC" data-price="18000">+ Keranjang</button></div>
+                        <div class="price-item"><span>263UC = 74.000</span><button class="add-to-cart" data-name="PUBG 263UC" data-price="74000">+ Keranjang</button></div>
+                        <div class="price-item"><span>500UC = 112.000</span><button class="add-to-cart" data-name="PUBG 500UC" data-price="112000">+ Keranjang</button></div>
+                        <div class="price-item"><span>700UC = 164.000</span><button class="add-to-cart" data-name="PUBG 700UC" data-price="164000">+ Keranjang</button></div>
+                        <div class="price-item"><span>788UC = 193.000</span><button class="add-to-cart" data-name="PUBG 788UC" data-price="193000">+ Keranjang</button></div>
+                        <div class="price-item"><span>1000UC = 242.000</span><button class="add-to-cart" data-name="PUBG 1000UC" data-price="242000">+ Keranjang</button></div>
+                        <div class="price-item"><span>1100UC = 250.000</span><button class="add-to-cart" data-name="PUBG 1100UC" data-price="250000">+ Keranjang</button></div>
+                        <div class="price-item"><span>2425UC = 517.000</span><button class="add-to-cart" data-name="PUBG 2425UC" data-price="517000">+ Keranjang</button></div>
+                        <div class="price-item"><span>2875UC = 625.000</span><button class="add-to-cart" data-name="PUBG 2875UC" data-price="625000">+ Keranjang</button></div>
                     </div>
                 </div>
 
-                <!-- Layanan Lain -->
+                <!-- Sewa Bot WhatsApp -->
                 <div class="product-card" data-category="lainnya">
                     <div class="product-header">
                         <h3>Sewa Bot WhatsApp</h3>
                         <p>Bot WhatsApp Premium</p>
                     </div>
                     <div class="product-body">
-                        <div class="price-item">
-                            <span>1 bulan = 5.000</span>
-                            <button class="add-to-cart" data-name="Sewa Bot WA 1 bulan" data-price="5000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>2 bulan = 10.000</span>
-                            <button class="add-to-cart" data-name="Sewa Bot WA 2 bulan" data-price="10000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>3 bulan = 15.000</span>
-                            <button class="add-to-cart" data-name="Sewa Bot WA 3 bulan" data-price="15000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>4 bulan = 20.000</span>
-                            <button class="add-to-cart" data-name="Sewa Bot WA 4 bulan" data-price="20000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>1 tahun = 25.000</span>
-                            <button class="add-to-cart" data-name="Sewa Bot WA 1 tahun" data-price="25000">+ Keranjang</button>
-                        </div>
+                        <div class="price-item"><span>1 bulan = 5.000</span><button class="add-to-cart" data-name="Sewa Bot WA 1 bulan" data-price="5000">+ Keranjang</button></div>
+                        <div class="price-item"><span>2 bulan = 10.000</span><button class="add-to-cart" data-name="Sewa Bot WA 2 bulan" data-price="10000">+ Keranjang</button></div>
+                        <div class="price-item"><span>3 bulan = 15.000</span><button class="add-to-cart" data-name="Sewa Bot WA 3 bulan" data-price="15000">+ Keranjang</button></div>
+                        <div class="price-item"><span>4 bulan = 20.000</span><button class="add-to-cart" data-name="Sewa Bot WA 4 bulan" data-price="20000">+ Keranjang</button></div>
+                        <div class="price-item"><span>1 tahun = 25.000</span><button class="add-to-cart" data-name="Sewa Bot WA 1 tahun" data-price="25000">+ Keranjang</button></div>
                     </div>
                 </div>
 
@@ -1252,31 +984,13 @@
                     </div>
                     <div class="product-body">
                         <h4>Tiktok:</h4>
-                        <div class="price-item">
-                            <span>500 Like = 1.000</span>
-                            <button class="add-to-cart" data-name="Suntik Tiktok 500 Like" data-price="1000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>500 View = 900</span>
-                            <button class="add-to-cart" data-name="Suntik Tiktok 500 View" data-price="900">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>100 Follow = 3.000</span>
-                            <button class="add-to-cart" data-name="Suntik Tiktok 100 Follow" data-price="3000">+ Keranjang</button>
-                        </div>
+                        <div class="price-item"><span>500 Like = 1.000</span><button class="add-to-cart" data-name="Suntik Tiktok 500 Like" data-price="1000">+ Keranjang</button></div>
+                        <div class="price-item"><span>500 View = 900</span><button class="add-to-cart" data-name="Suntik Tiktok 500 View" data-price="900">+ Keranjang</button></div>
+                        <div class="price-item"><span>100 Follow = 3.000</span><button class="add-to-cart" data-name="Suntik Tiktok 100 Follow" data-price="3000">+ Keranjang</button></div>
                         <h4 style="margin-top: 1rem;">Instagram:</h4>
-                        <div class="price-item">
-                            <span>500 Like = 2.000</span>
-                            <button class="add-to-cart" data-name="Suntik IG 500 Like" data-price="2000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>500 View = 1.000</span>
-                            <button class="add-to-cart" data-name="Suntik IG 500 View" data-price="1000">+ Keranjang</button>
-                        </div>
-                        <div class="price-item">
-                            <span>100 Follow = 3.000</span>
-                            <button class="add-to-cart" data-name="Suntik IG 100 Follow" data-price="3000">+ Keranjang</button>
-                        </div>
+                        <div class="price-item"><span>500 Like = 2.000</span><button class="add-to-cart" data-name="Suntik IG 500 Like" data-price="2000">+ Keranjang</button></div>
+                        <div class="price-item"><span>500 View = 1.000</span><button class="add-to-cart" data-name="Suntik IG 500 View" data-price="1000">+ Keranjang</button></div>
+                        <div class="price-item"><span>100 Follow = 3.000</span><button class="add-to-cart" data-name="Suntik IG 100 Follow" data-price="3000">+ Keranjang</button></div>
                     </div>
                 </div>
             </div>
@@ -1302,7 +1016,7 @@
                             <li>SEABAK: 901428220963</li>
                             <li>QRIS: CHAT ADMIN</li>
                         </ul>
-                        <p style="margin-top: 1rem; font-style: italic;"> Note: Nominal lain tanyakan admin, no rush, send id - pay - done </p>
+                        <p style="margin-top: 1rem; font-style: italic;">Note: Nominal lain tanyakan admin, no rush, send id - pay - done</p>
                     </div>
                 </div>
                 <div class="about-image">
@@ -1327,11 +1041,7 @@
                         </div>
                     </div>
                     <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <p>"Prosesnya cepat banget, ga sampe 5 menit diamond langsung masuk. Adminnya ramah dan helpful. Recommended banget!"</p>
                 </div>
@@ -1344,11 +1054,7 @@
                         </div>
                     </div>
                     <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <p>"Pertama kali beli disini dan ga mengecewakan. Harganya murah dibanding tempat lain. Bakal langganan disini terus."</p>
                 </div>
@@ -1361,11 +1067,7 @@
                         </div>
                     </div>
                     <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                     </div>
                     <p>"Bot WA-nya bekerja dengan baik. Ada kendala sedikit tapi admin langsung bantu selesaikan. Good service!"</p>
                 </div>
@@ -1450,40 +1152,23 @@
         const checkoutBtn = document.getElementById('checkoutBtn');
         const addToCartButtons = document.querySelectorAll('.add-to-cart');
         
-        // Open cart modal
-        cartBtn.addEventListener('click', () => {
-            cartModal.style.display = 'flex';
-        });
+        cartBtn.addEventListener('click', () => { cartModal.style.display = 'flex'; });
+        closeCart.addEventListener('click', () => { cartModal.style.display = 'none'; });
         
-        // Close cart modal
-        closeCart.addEventListener('click', () => {
-            cartModal.style.display = 'none';
-        });
-        
-        // Close modal when clicking outside
         window.addEventListener('click', (e) => {
-            if (e.target === cartModal) {
-                cartModal.style.display = 'none';
-            }
+            if (e.target === cartModal) cartModal.style.display = 'none';
         });
         
-        // Add to cart functionality
         addToCartButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const name = button.getAttribute('data-name');
                 const price = parseInt(button.getAttribute('data-price'));
                 
-                // Check if item already in cart
                 const existingItem = cart.find(item => item.name === name);
-                
                 if (existingItem) {
                     existingItem.quantity += 1;
                 } else {
-                    cart.push({
-                        name: name,
-                        price: price,
-                        quantity: 1
-                    });
+                    cart.push({ name: name, price: price, quantity: 1 });
                 }
                 
                 updateCart();
@@ -1491,7 +1176,6 @@
             });
         });
         
-        // Update cart display
         function updateCart() {
             cartItems.innerHTML = '';
             let total = 0;
@@ -1516,36 +1200,31 @@
                         <button class="remove-item" data-index="${index}"><i class="fas fa-trash"></i></button>
                     </div>
                 `;
-                
                 cartItems.appendChild(cartItem);
             });
             
             cartTotal.textContent = `Rp ${total.toLocaleString('id-ID')}`;
             cartBadge.textContent = itemCount;
             
-            // Add event listeners to cart item buttons
-            document.querySelectorAll('.decrease-quantity').forEach(button => {
-                button.addEventListener('click', (e) => {
+            document.querySelectorAll('.decrease-quantity').forEach(btn => {
+                btn.addEventListener('click', (e) => {
                     const index = e.target.getAttribute('data-index');
-                    if (cart[index].quantity > 1) {
-                        cart[index].quantity -= 1;
-                    } else {
-                        cart.splice(index, 1);
-                    }
+                    if (cart[index].quantity > 1) cart[index].quantity -= 1;
+                    else cart.splice(index, 1);
                     updateCart();
                 });
             });
             
-            document.querySelectorAll('.increase-quantity').forEach(button => {
-                button.addEventListener('click', (e) => {
+            document.querySelectorAll('.increase-quantity').forEach(btn => {
+                btn.addEventListener('click', (e) => {
                     const index = e.target.getAttribute('data-index');
                     cart[index].quantity += 1;
                     updateCart();
                 });
             });
             
-            document.querySelectorAll('.remove-item').forEach(button => {
-                button.addEventListener('click', (e) => {
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', (e) => {
                     const index = e.target.closest('button').getAttribute('data-index');
                     cart.splice(index, 1);
                     updateCart();
@@ -1553,18 +1232,14 @@
             });
         }
         
-        // Clear cart
         clearCart.addEventListener('click', () => {
-            if (cart.length > 0) {
-                if (confirm('Apakah Anda yakin ingin mengosongkan keranjang?')) {
-                    cart = [];
-                    updateCart();
-                    showNotification('Keranjang berhasil dikosongkan');
-                }
+            if (cart.length > 0 && confirm('Apakah Anda yakin ingin mengosongkan keranjang?')) {
+                cart = [];
+                updateCart();
+                showNotification('Keranjang berhasil dikosongkan');
             }
         });
         
-        // Checkout via WhatsApp
         checkoutBtn.addEventListener('click', () => {
             if (cart.length === 0) {
                 alert('Keranjang belanja Anda kosong!');
@@ -1580,47 +1255,26 @@
                 message += `- ${item.name} (${item.quantity}x) = Rp ${itemTotal.toLocaleString('id-ID')}\n`;
             });
             
-            message += `\nTotal: Rp ${total.toLocaleString('id-ID')}\n\n`;
-            message += "Apakah produk tersedia?";
+            message += `\nTotal: Rp ${total.toLocaleString('id-ID')}\n\nApakah produk tersedia?`;
             
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/6289506222871?text=${encodedMessage}`;
-            
+            const whatsappUrl = `https://wa.me/6289506222871?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         });
         
-        // Show notification
         function showNotification(message) {
-            // Create notification element
             const notification = document.createElement('div');
             notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background-color: var(--primary);
-                color: white;
-                padding: 1rem 1.5rem;
-                border-radius: 4px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-                z-index: 1000;
-                transform: translateX(100%);
-                transition: transform 0.3s ease;
+                position: fixed; top: 20px; right: 20px; background-color: var(--primary); color: white;
+                padding: 1rem 1.5rem; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 1000; transform: translateX(100%); transition: transform 0.3s ease;
             `;
             notification.textContent = message;
-            
             document.body.appendChild(notification);
             
-            // Animate in
-            setTimeout(() => {
-                notification.style.transform = 'translateX(0)';
-            }, 100);
-            
-            // Animate out and remove
+            setTimeout(() => notification.style.transform = 'translateX(0)', 100);
             setTimeout(() => {
                 notification.style.transform = 'translateX(100%)';
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
+                setTimeout(() => document.body.removeChild(notification), 300);
             }, 3000);
         }
         
@@ -1629,38 +1283,23 @@
         const categoryButtons = document.querySelectorAll('.category-btn');
         const productCards = document.querySelectorAll('.product-card');
         
-        // Search functionality
         searchInput.addEventListener('input', () => {
             const searchTerm = searchInput.value.toLowerCase();
-            
             productCards.forEach(card => {
                 const productName = card.querySelector('.product-header h3').textContent.toLowerCase();
                 const productDesc = card.querySelector('.product-header p').textContent.toLowerCase();
-                
-                if (productName.includes(searchTerm) || productDesc.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = (productName.includes(searchTerm) || productDesc.includes(searchTerm)) ? 'block' : 'none';
             });
         });
         
-        // Category filtering
         categoryButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Remove active class from all buttons
                 categoryButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
                 button.classList.add('active');
                 
                 const category = button.getAttribute('data-category');
-                
                 productCards.forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    card.style.display = (category === 'all' || card.getAttribute('data-category') === category) ? 'block' : 'none';
                 });
             });
         });
@@ -1669,8 +1308,8 @@
         const musicToggle = document.getElementById('musicToggle');
         const bgMusic = document.getElementById('bgMusic');
         let isPlaying = false;
-
-        musicToggle.addEventListener('click', function() {
+        
+        musicToggle.addEventListener('click', () => {
             if (isPlaying) {
                 bgMusic.pause();
                 musicToggle.innerHTML = '<i class="fas fa-music"></i>';
@@ -1680,69 +1319,52 @@
             }
             isPlaying = !isPlaying;
         });
-
+        
         // Video Background Controls
         const backgroundVideo = document.getElementById('backgroundVideo');
         const playPauseVideoBtn = document.getElementById('playPauseVideo');
         const muteUnmuteVideoBtn = document.getElementById('muteUnmuteVideo');
-        const playPauseVideoIcon = playPauseVideoBtn.querySelector('i');
-        const muteUnmuteVideoIcon = muteUnmuteVideoBtn.querySelector('i');
-
+        
         playPauseVideoBtn.addEventListener('click', () => {
             if (backgroundVideo.paused) {
                 backgroundVideo.play();
-                playPauseVideoIcon.classList.remove('fa-play');
-                playPauseVideoIcon.classList.add('fa-pause');
+                playPauseVideoBtn.innerHTML = '<i class="fas fa-pause"></i>';
             } else {
                 backgroundVideo.pause();
-                playPauseVideoIcon.classList.remove('fa-pause');
-                playPauseVideoIcon.classList.add('fa-play');
+                playPauseVideoBtn.innerHTML = '<i class="fas fa-play"></i>';
             }
         });
-
+        
         muteUnmuteVideoBtn.addEventListener('click', () => {
             backgroundVideo.muted = !backgroundVideo.muted;
-            if (backgroundVideo.muted) {
-                muteUnmuteVideoIcon.classList.remove('fa-volume-up');
-                muteUnmuteVideoIcon.classList.add('fa-volume-mute');
-            } else {
-                muteUnmuteVideoIcon.classList.remove('fa-volume-mute');
-                muteUnmuteVideoIcon.classList.add('fa-volume-up');
-            }
+            muteUnmuteVideoBtn.innerHTML = backgroundVideo.muted ? 
+                '<i class="fas fa-volume-mute"></i>' : 
+                '<i class="fas fa-volume-up"></i>';
         });
-
+        
         // Dark mode toggle
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
-
-        // Check for saved user preference
+        
         const currentTheme = localStorage.getItem('theme');
         if (currentTheme) {
             body.classList.add(currentTheme);
-            updateThemeIcon(currentTheme);
+            themeToggle.innerHTML = currentTheme === 'dark-mode' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         }
-
-        themeToggle.addEventListener('click', function() {
+        
+        themeToggle.addEventListener('click', () => {
             if (body.classList.contains('dark-mode')) {
                 body.classList.remove('dark-mode');
                 localStorage.setItem('theme', '');
-                updateThemeIcon('');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
             } else {
                 body.classList.add('dark-mode');
                 localStorage.setItem('theme', 'dark-mode');
-                updateThemeIcon('dark-mode');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
             }
         });
-
-        function updateThemeIcon(theme) {
-            if (theme === 'dark-mode') {
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            }
-        }
-
-        // Smooth scrolling for anchor links
+        
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1751,23 +1373,11 @@
                 });
             });
         });
-
-        // Loading indicator for video
+        
+        // Loading indicator
         const loadingIndicator = document.getElementById('loading');
-        const video = document.getElementById('backgroundVideo');
-        
-        video.addEventListener('loadstart', () => {
-            loadingIndicator.style.display = 'flex';
-        });
-        
-        video.addEventListener('canplay', () => {
-            loadingIndicator.style.display = 'none';
-        });
-        
-        video.addEventListener('error', () => {
-            loadingIndicator.style.display = 'none';
-            console.error('Error loading video');
-        });
+        backgroundVideo.addEventListener('loadstart', () => loadingIndicator.style.display = 'flex');
+        backgroundVideo.addEventListener('canplay', () => loadingIndicator.style.display = 'none');
     </script>
 </body>
 </html>
