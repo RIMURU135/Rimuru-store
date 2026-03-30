@@ -129,7 +129,7 @@
             justify-content: center;
         }
 
-        /* HERO + VIDEO - DIPERBAIKI: TIDAK TERPOTONG, FULL LANDSCAPE */
+        /* HERO + VIDEO - TIDAK TERPOTONG, LANDSCAPE UTUH */
         .hero {
             position: relative;
             width: 100%;
@@ -141,7 +141,7 @@
             text-align: center;
             color: white;
             overflow: hidden;
-            background-color: #000; /* fallback hitam */
+            background-color: #000;
         }
 
         .video-background {
@@ -150,13 +150,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;   /* === TIDAK TERPOTONG, video utuh landscape === */
+            object-fit: contain;
             object-position: center center;
-            background-color: #000; /* latar hitam di area kosong */
+            background-color: #000;
             z-index: 0;
         }
 
-        /* fallback jika video gagal */
         .hero-video-fallback {
             position: absolute;
             top: 0;
@@ -548,22 +547,6 @@
             border-top: 1px solid #334155;
         }
 
-        .music-player {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            background: var(--card-bg);
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-            cursor: pointer;
-            z-index: 99;
-            color: var(--primary);
-        }
         .loading {
             display: none;
             position: fixed;
@@ -594,11 +577,6 @@
     <p>Memuat pengalaman terbaik...</p>
 </div>
 
-<audio id="bgMusic" loop preload="none">
-    <source src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mp3">
-</audio>
-<div class="music-player" id="musicToggle"><i class="fas fa-music"></i></div>
-
 <div class="cart-container">
     <button class="cart-btn" id="cartBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" id="cartBadge">0</span></button>
 </div>
@@ -619,7 +597,6 @@
 </header>
 
 <section class="hero" id="home">
-    <!-- Video Background: object-fit contain -> TIDAK TERPOTONG, landscape utuh -->
     <video class="video-background" id="backgroundVideo" autoplay muted loop playsinline poster="https://picsum.photos/id/104/1920/1080">
         <source src="https://image2url.com/r2/default/videos/1774790761304-592aeffb-1a5b-4038-872b-48cc9d92b619.mp4" type="video/mp4">
     </video>
@@ -715,11 +692,10 @@
     video.addEventListener('play', () => { document.querySelector('#playPauseVideo i').className = 'fas fa-pause'; });
     video.addEventListener('pause', () => { document.querySelector('#playPauseVideo i').className = 'fas fa-play'; });
 
-    // Dark Mode & Music
+    // Dark Mode (tanpa musik)
     const themeToggle = document.getElementById('themeToggle'); const body = document.body;
     if(localStorage.getItem('theme') === 'dark-mode') body.classList.add('dark-mode'), themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     themeToggle.onclick = () => { body.classList.toggle('dark-mode'); const isDark = body.classList.contains('dark-mode'); localStorage.setItem('theme', isDark ? 'dark-mode' : ''); themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>'; };
-    const music = document.getElementById('bgMusic'); let musicPlaying = false; document.getElementById('musicToggle').onclick = () => { if(musicPlaying) { music.pause(); document.querySelector('#musicToggle i').className = 'fas fa-music'; } else { music.play(); document.querySelector('#musicToggle i').className = 'fas fa-pause'; } musicPlaying = !musicPlaying; };
     
     buildProductsHTML(); updateCartUI(); filterProducts();
     document.querySelectorAll('a[href^="#"]').forEach(anchor => anchor.addEventListener('click', function(e){ e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'}); }));
@@ -727,4 +703,3 @@
 </script>
 </body>
 </html>
-```
