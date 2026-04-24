@@ -1,3 +1,4 @@
+
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -678,4 +679,416 @@
         <div class="cart-header"><h2>🛒 Keranjang</h2><button id="closeCart">&times;</button></div>
         <div id="cartItems"></div>
         <div class="cart-total"><span>Total : </span><span id="cartTotal">Rp 0</span></div>
-        <div class="cart-actions"><button class="btn-clear" id="clearCart">Kosongkan</button><button class="btn-checkout" id="checkoutBtn"><i class="fab fa-whatsa
+        <div class="cart-actions"><button class="btn-clear" id="clearCart">Kosongkan</button><button class="btn-checkout" id="checkoutBtn"><i class="fab fa-whatsapp"></i> Checkout WA</button></div>
+    </div>
+</div>
+
+<header>
+    <div class="container header-content">
+        <div class="logo">
+            <img src="https://file.idnet.my.id/api/preview.php?file=ymggle9h.png" alt="Rimuru Store">
+            <h1>Rimuru Store</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#testimonials">Testimoni</a></li>
+                <li><a href="#contact">Kontak</a></li>
+                <li><button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <!-- VIDEO BACKGROUND DIGANTI -->
+    <video class="video-background" id="backgroundVideo" autoplay muted loop playsinline poster="https://picsum.photos/id/104/1920/1080">
+        <source src="https://www.image2url.com/r2/default/videos/1777021085438-4c5933f8-2d34-4fd4-b6b1-ea879e8ed302.mp4" type="video/mp4">
+    </video>
+    <div class="video-controls">
+        <button id="playPauseVideo"><i class="fas fa-pause"></i></button>
+        <button id="muteUnmuteVideo"><i class="fas fa-volume-up"></i></button>
+    </div>
+    <div class="hero-content">
+        <h2>Topup Game & Layanan Digital</h2>
+        <p>Proses kilat • Harga bersahabat • Pelayanan 24/7</p>
+        <a href="#products" class="btn">Jelajahi Produk</a>
+    </div>
+</section>
+
+<section id="products">
+    <div class="container">
+        <div class="section-title"><h2>🔥 Produk Kami</h2></div>
+        <div class="product-filters">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Cari diamond, robux, UC...">
+            </div>
+            <div class="category-filters">
+                <button class="category-btn active" data-category="all">Semua</button>
+                <button class="category-btn" data-category="freefire">Free Fire</button>
+                <button class="category-btn" data-category="mobilelegends">Mobile Legends</button>
+                <button class="category-btn" data-category="roblox">Roblox</button>
+                <button class="category-btn" data-category="cod">Call of Duty</button>
+                <button class="category-btn" data-category="pubg">PUBG</button>
+                <button class="category-btn" data-category="genshin">Genshin Impact</button>
+                <button class="category-btn" data-category="lainnya">Lainnya</button>
+            </div>
+        </div>
+        <div class="products" id="productsContainer"></div>
+    </div>
+</section>
+
+<section id="about" style="background-color: var(--section-bg);">
+    <div class="container">
+        <div class="section-title"><h2>Tentang Kami</h2></div>
+        <div class="about-content">
+            <p>Rimuru Store hadir sejak 2020 sebagai penyedia topup game & layanan digital terpercaya. Dengan semangat pelayanan ala dunia anime, kami menawarkan proses super cepat, harga kompetitif, dan dukungan ramah 24 jam.</p>
+            <div style="margin-top:1.2rem"><strong>💳 Metode Pembayaran:</strong> DANA, GOPAY, OVO, SPAY, SEA BANK, QRIS</div>
+            <div><strong>📞 Nomor Transaksi:</strong> 0831-4042-7092 | BANK JAGO: 901428220963</div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials">
+    <div class="container">
+        <div class="section-title"><h2>⭐ Testimoni Pelanggan</h2></div>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rizky">
+                    <div><h4>Rizky P.</h4><p>Free Fire</p></div>
+                </div>
+                <div class="testimonial-rating">★★★★★</div>
+                <p>"Diamond masuk 2 menit, admin ramah, jadi langganan!"</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+                    <div><h4>Sarah W.</h4><p>Mobile Legends</p></div>
+                </div>
+                <div class="testimonial-rating">★★★★★</div>
+                <p>"Murah, cepat, recommended banget!"</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Andi">
+                    <div><h4>Andi S.</h4><p>Bot WA</p></div>
+                </div>
+                <div class="testimonial-rating">★★★★½</div>
+                <p>"Sewa bot stabil, respon sigap. Mantap!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" style="background-color: var(--section-bg);">
+    <div class="container">
+        <div class="section-title"><h2>📱 Hubungi Kami</h2></div>
+        <div class="contact-info">
+            <div class="contact-card">
+                <i class="fab fa-whatsapp fa-2x" style="color:#25D366;"></i>
+                <h4>WhatsApp</h4>
+                <p>0831-4042-7092</p>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-instagram fa-2x" style="color:#E1306C;"></i>
+                <h4>Instagram</h4>
+                <p>@ZAINALA_KEYΖΙ</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <h3>Rimuru Store</h3>
+                <p>Topup game & digital terpercaya sejak 2020.</p>
+            </div>
+            <div>
+                <h4>Navigasi</h4>
+                <a href="#home" style="color: #c4b5e5; display:block;">Beranda</a>
+                <a href="#products" style="color: #c4b5e5; display:block;">Produk</a>
+                <a href="#contact" style="color: #c4b5e5; display:block;">Kontak</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Rimuru Store. All rights reserved. | Tema terinspirasi oleh dunia anime.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    (function() {
+        // TEMA GELAP/TERANG (default gelap)
+        const body = document.body;
+        const themeToggle = document.getElementById('themeToggle');
+        const icon = themeToggle.querySelector('i');
+
+        function updateThemeUI() {
+            if (body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            updateThemeUI();
+        });
+        updateThemeUI();
+
+        // VIDEO HERO CONTROLS
+        const video = document.getElementById('backgroundVideo');
+        const playPauseBtn = document.getElementById('playPauseVideo');
+        const muteUnmuteBtn = document.getElementById('muteUnmuteVideo');
+        if (video && playPauseBtn && muteUnmuteBtn) {
+            playPauseBtn.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    video.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            });
+            muteUnmuteBtn.addEventListener('click', () => {
+                video.muted = !video.muted;
+                muteUnmuteBtn.innerHTML = video.muted ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
+            });
+        }
+
+        // DATA PRODUK LENGKAP (Netflix, Disney+, Voucher Google Play dihapus)
+        const productsData = [
+            {
+                category: "freefire",
+                name: "Free Fire",
+                prices: [
+                    "5 Diamonds - Rp 1.000",
+                    "12 Diamonds - Rp 2.000",
+                    "20 Diamonds - Rp 3.000",
+                    "35 Diamonds - Rp 5.000",
+                    "50 Diamonds - Rp 7.000",
+                    "70 Diamonds - Rp 10.000",
+                    "100 Diamonds - Rp 14.000",
+                    "140 Diamonds - Rp 20.000",
+                    "200 Diamonds - Rp 28.000",
+                    "355 Diamonds - Rp 50.000",
+                    "500 Diamonds - Rp 70.000",
+                    "1000 Diamonds - Rp 140.000"
+                ]
+            },
+            {
+                category: "mobilelegends",
+                name: "Mobile Legends",
+                prices: [
+                    "11 Diamonds - Rp 3.000",
+                    "22 Diamonds - Rp 6.000",
+                    "30 Diamonds - Rp 8.000",
+                    "56 Diamonds - Rp 15.000",
+                    "86 Diamonds - Rp 22.000",
+                    "172 Diamonds - Rp 44.000",
+                    "257 Diamonds - Rp 66.000",
+                    "344 Diamonds - Rp 88.000",
+                    "514 Diamonds - Rp 132.000",
+                    "600 Diamonds - Rp 154.000",
+                    "706 Diamonds - Rp 180.000",
+                    "1000 Diamonds - Rp 250.000"
+                ]
+            },
+            {
+                category: "roblox",
+                name: "Roblox",
+                prices: [
+                    "40 Robux - Rp 6.000",
+                    "80 Robux - Rp 12.000",
+                    "160 Robux - Rp 24.000",
+                    "240 Robux - Rp 36.000",
+                    "320 Robux - Rp 48.000",
+                    "450 Robux - Rp 67.000",
+                    "800 Robux - Rp 120.000",
+                    "1000 Robux - Rp 150.000",
+                    "2000 Robux - Rp 300.000"
+                ]
+            },
+            {
+                category: "cod",
+                name: "Call of Duty",
+                prices: [
+                    "31 CP - Rp 5.000",
+                    "53 CP - Rp 8.000",
+                    "62 CP - Rp 10.000",
+                    "124 CP - Rp 20.000",
+                    "155 CP - Rp 25.000",
+                    "310 CP - Rp 50.000",
+                    "620 CP - Rp 100.000",
+                    "1260 CP - Rp 200.000"
+                ]
+            },
+            {
+                category: "pubg",
+                name: "PUBG Mobile",
+                prices: [
+                    "30 UC - Rp 6.000",
+                    "60 UC - Rp 12.000",
+                    "120 UC - Rp 24.000",
+                    "180 UC - Rp 36.000",
+                    "300 UC - Rp 60.000",
+                    "600 UC - Rp 120.000",
+                    "1500 UC - Rp 300.000",
+                    "3000 UC - Rp 600.000"
+                ]
+            },
+            {
+                category: "genshin",
+                name: "Genshin Impact",
+                prices: [
+                    "60 Genesis Crystals - Rp 12.000",
+                    "300+30 Genesis Crystals - Rp 60.000",
+                    "980+110 Genesis Crystals - Rp 200.000",
+                    "1980+260 Genesis Crystals - Rp 400.000",
+                    "3280+600 Genesis Crystals - Rp 650.000",
+                    "6480+1600 Genesis Crystals - Rp 1.300.000"
+                ]
+            },
+            {
+                category: "lainnya",
+                name: "Layanan Digital",
+                prices: [
+                    "Spotify Premium 1 Bulan - Rp 55.000",
+                    "YouTube Premium 1 Bulan - Rp 65.000",
+                    "Bot WhatsApp 1 Bulan - Rp 15.000",
+                    "Sewa Bot Discord 1 Bulan - Rp 20.000"
+                ]
+            }
+        ];
+
+        let cart = [];
+        const productsContainer = document.getElementById('productsContainer');
+        const cartBtn = document.getElementById('cartBtn');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItemsDiv = document.getElementById('cartItems');
+        const cartTotalSpan = document.getElementById('cartTotal');
+        const cartBadge = document.getElementById('cartBadge');
+        const clearCartBtn = document.getElementById('clearCart');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const searchInput = document.getElementById('searchInput');
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        let activeCategory = 'all';
+
+        function displayProducts(filter = 'all', searchTerm = '') {
+            productsContainer.innerHTML = '';
+            const filtered = productsData.filter(p => {
+                const matchCat = filter === 'all' || p.category === filter;
+                const matchSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    p.prices.some(pr => pr.toLowerCase().includes(searchTerm.toLowerCase()));
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                productsContainer.innerHTML = '<p style="grid-column:1/-1;text-align:center;">Tidak ada produk ditemukan.</p>';
+                return;
+            }
+
+            filtered.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="product-header"><h3>${product.name}</h3></div>
+                    <div class="product-body">
+                        ${product.prices.map(price => `
+                            <div class="price-item">
+                                <span>${price}</span>
+                                <button class="add-to-cart" data-product="${product.name}" data-price="${price}">+ Topup</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                productsContainer.appendChild(card);
+            });
+
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const name = e.target.dataset.product;
+                    const priceStr = e.target.dataset.price;
+                    const priceNumber = parseInt(priceStr.replace(/[^0-9]/g, ''));
+                    addToCart(name, priceStr, priceNumber);
+                });
+            });
+        }
+
+        function addToCart(name, priceStr, priceNumber) {
+            cart.push({ name, priceStr, priceNumber });
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            cartBadge.textContent = cart.length;
+            cartItemsDiv.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.priceNumber;
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `<span>${item.name} - ${item.priceStr}</span>
+                    <button class="remove-item" data-index="${index}" style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:1.2rem;">&times;</button>`;
+                cartItemsDiv.appendChild(div);
+            });
+            cartTotalSpan.textContent = 'Rp ' + total.toLocaleString('id-ID');
+
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const index = e.target.dataset.index;
+                    cart.splice(index, 1);
+                    updateCartUI();
+                });
+            });
+        }
+
+        cartBtn.addEventListener('click', () => cartModal.style.display = 'flex');
+        closeCart.addEventListener('click', () => cartModal.style.display = 'none');
+        window.addEventListener('click', (e) => { if (e.target === cartModal) cartModal.style.display = 'none'; });
+        clearCartBtn.addEventListener('click', () => { cart = []; updateCartUI(); });
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) return alert('Keranjang kosong!');
+            let message = 'Halo Rimuru Store, saya mau order:%0A';
+            cart.forEach(item => message += `- ${item.name} : ${item.priceStr}%0A`);
+            const total = cart.reduce((s, i) => s + i.priceNumber, 0);
+            message += `%0ATotal: Rp ${total.toLocaleString('id-ID')}`;
+            window.open(`https://wa.me/6283140427092?text=${message}`, '_blank');
+        });
+
+        searchInput.addEventListener('input', () => displayProducts(activeCategory, searchInput.value));
+        categoryButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCategory = btn.dataset.category;
+                displayProducts(activeCategory, searchInput.value);
+            });
+        });
+
+        window.addEventListener('load', () => {
+            const loading = document.getElementById('loading');
+            loading.style.display = 'flex';
+            setTimeout(() => {
+                loading.style.display = 'none';
+                displayProducts();
+            }, 1000);
+        });
+    })();
+</script>
+</body>
+</html>
