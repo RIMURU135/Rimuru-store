@@ -18,7 +18,7 @@
             --bg-color: #0d0b1a;
             --text-color: #f0e6ff;
             --card-bg: #1a1228;
-            --header-bg: transparent;
+            --header-bg: #0f0b1a;
             --footer-bg: #060311;
             --section-bg: #0f0c1e;
             --border-light: #3a2a50;
@@ -37,7 +37,7 @@
             --bg-color: #f5f0fa;
             --text-color: #1e1a2b;
             --card-bg: #ffffff;
-            --header-bg: rgba(255, 255, 255, 0.85);
+            --header-bg: #ffffff;
             --footer-bg: #ede7f6;
             --section-bg: #f3e5f5;
             --border-light: #d1c4e9;
@@ -68,16 +68,14 @@
 
         header {
             background: var(--header-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             color: var(--text-color);
             padding: 0.8rem 0;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            border-bottom: 2px solid var(--accent);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
 
         .header-content {
@@ -129,29 +127,12 @@
             border-radius: 30px;
             transition: 0.2s;
             letter-spacing: 0.5px;
-            position: relative;
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 6px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
-            border-radius: 2px;
         }
 
         nav ul li a:hover {
+            background: var(--primary);
             color: white;
-            text-shadow: 0 0 10px var(--accent);
-        }
-
-        nav ul li a:hover::after {
-            width: 60%;
+            box-shadow: var(--neon-glow);
         }
 
         .theme-toggle {
@@ -166,16 +147,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(4px);
         }
 
         .theme-toggle:hover {
             background: var(--primary);
             color: white;
-            box-shadow: var(--neon-glow);
         }
 
-        /* HERO dengan video contain penuh tanpa potongan */
         .hero {
             position: relative;
             width: 100%;
@@ -187,7 +165,7 @@
             text-align: center;
             color: white;
             overflow: hidden;
-            background-color: #0a0418; /* fallback jika video tidak tertampil */
+            background-color: #0a0418;
         }
 
         .video-background {
@@ -196,10 +174,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;    /* ← PASTIKAN TIDAK TERPOTONG */
+            object-fit: contain;
             object-position: center center;
             z-index: 0;
-            background-color: #000; /* letterbox hitam jika aspek video berbeda */
+            background-color: #000;
         }
 
         .hero::before {
@@ -209,9 +187,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(30, 10, 60, 0.75), rgba(10, 5, 35, 0.8));
+            background: linear-gradient(135deg, rgba(30, 10, 60, 0.8), rgba(10, 5, 35, 0.85));
             z-index: 1;
-            pointer-events: none; /* agar kontrol video tetap bisa diklik */
+            pointer-events: none;
         }
 
         .hero-content {
@@ -254,7 +232,6 @@
 
         .video-controls button {
             background: rgba(20, 10, 40, 0.7);
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.3);
             color: white;
             width: 44px;
@@ -273,7 +250,8 @@
 
         .btn {
             display: inline-block;
-            background: transparent;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(4px);
             color: white;
             padding: 0.8rem 2.4rem;
             border-radius: 50px;
@@ -282,9 +260,7 @@
             transition: 0.3s;
             border: 2px solid white;
             letter-spacing: 1px;
-            backdrop-filter: blur(4px);
-            background: rgba(255,255,255,0.1);
-            box-shadow: 0 4px 15px rgba(255, 94, 156, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 94, 156, 0.4);
         }
 
         .btn:hover {
@@ -309,7 +285,6 @@
             display: inline-block;
             padding-bottom: 0.5rem;
             position: relative;
-            letter-spacing: 1px;
         }
 
         .section-title h2::after {
@@ -348,7 +323,6 @@
             background: var(--card-bg);
             color: var(--text-color);
             font-weight: 500;
-            backdrop-filter: blur(4px);
         }
 
         .search-box i {
@@ -373,7 +347,6 @@
             cursor: pointer;
             font-weight: 600;
             transition: 0.2s;
-            letter-spacing: 0.5px;
         }
 
         .category-btn.active {
@@ -396,12 +369,11 @@
             box-shadow: var(--shadow);
             transition: all 0.3s;
             border: 1px solid var(--border-light);
-            backdrop-filter: blur(4px);
         }
 
         .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(155, 48, 249, 0.3);
+            box-shadow: 0 20px 40px rgba(155, 48, 249, 0.35);
             border-color: var(--accent);
         }
 
@@ -416,14 +388,13 @@
         .product-header h3 {
             font-family: var(--font-display);
             font-size: 1.7rem;
-            letter-spacing: 0.5px;
         }
 
         .product-body {
             padding: 1.3rem;
             max-height: 420px;
             overflow-y: auto;
-            background: rgba(0,0,0,0.15);
+            background: rgba(0,0,0,0.1);
         }
 
         .price-item {
@@ -443,7 +414,6 @@
             cursor: pointer;
             font-size: 0.8rem;
             font-weight: 700;
-            transition: 0.2s;
         }
 
         .add-to-cart:hover {
@@ -467,11 +437,6 @@
             color: white;
             cursor: pointer;
             box-shadow: 0 8px 25px rgba(255, 94, 156, 0.6);
-            transition: 0.3s;
-        }
-        .cart-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 30px var(--accent);
         }
         .cart-badge {
             position: absolute;
@@ -487,7 +452,6 @@
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
         }
         .cart-modal {
             display: none;
@@ -511,7 +475,6 @@
             padding: 1.8rem;
             overflow-y: auto;
             border: 1px solid var(--border-light);
-            box-shadow: 0 20px 50px rgba(155,48,249,0.4);
         }
         .cart-header {
             display: flex;
@@ -539,22 +502,15 @@
             margin: 1rem 0;
             text-align: right;
         }
-        .cart-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-        }
         .btn-clear, .btn-checkout {
             padding: 0.6rem 1.4rem;
             border-radius: 40px;
             border: none;
             cursor: pointer;
             font-weight: 700;
-            letter-spacing: 0.5px;
         }
         .btn-clear { background: #475569; color: white; }
-        .btn-checkout { background: #25D366; color: white; box-shadow: 0 0 15px rgba(37,211,102,0.5); }
+        .btn-checkout { background: #25D366; color: white; }
 
         .testimonials {
             display: flex;
@@ -569,11 +525,6 @@
             width: 280px;
             box-shadow: var(--shadow);
             border: 1px solid var(--border-light);
-            transition: 0.3s;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
         }
         .testimonial-header {
             display: flex;
@@ -588,7 +539,7 @@
             object-fit: cover;
             border: 2px solid var(--accent);
         }
-        .testimonial-rating { color: #fbbf24; margin: 0.5rem 0; }
+        .testimonial-rating { color: #fbbf24; }
 
         .contact-info {
             display: flex;
@@ -603,22 +554,6 @@
             text-align: center;
             width: 220px;
             border: 1px solid var(--border-light);
-        }
-        .social-links a {
-            color: white;
-            background: #2d1b4e;
-            display: inline-block;
-            margin: 0 6px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            line-height: 40px;
-            text-align: center;
-            transition: 0.2s;
-        }
-        .social-links a:hover {
-            background: var(--accent);
-            box-shadow: 0 0 15px var(--accent);
         }
 
         footer {
@@ -640,40 +575,15 @@
             border-top: 1px solid #2e1c44;
         }
 
-        .loading {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(5,2,20,0.95);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: white;
-            backdrop-filter: blur(10px);
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
-
         @media (max-width: 780px) {
-            .hero h2 { font-size: 2.1rem; }
-            .hero p { font-size: 0.95rem; }
-            .header-content { flex-direction: column; }
-            .category-filters { justify-content: center; }
+            .hero h2 { font-size: 2rem; }
+            .header-content { flex-direction: column; gap: 0.5rem; }
+            nav ul { justify-content: center; }
             .section-title h2 { font-size: 2rem; }
-            .product-card { margin: 0 0.5rem; }
         }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1a1228; }
-        ::-webkit-scrollbar-thumb { background: #9b30f9; border-radius: 10px; }
     </style>
 </head>
 <body>
-<div class="loading" id="loading">
-    <div style="width:50px;height:50px;border:5px solid rgba(255,255,255,0.2);border-top:5px solid var(--accent);border-radius:50%;animation:spin 1s linear infinite;margin-bottom:1rem;"></div>
-    <p>Memuat dunia anime...</p>
-</div>
-
 <div class="cart-container">
     <button class="cart-btn" id="cartBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" id="cartBadge">0</span></button>
 </div>
@@ -706,7 +616,6 @@
 </header>
 
 <section class="hero" id="home">
-    <!-- VIDEO BACKGROUND TIDAK TERPOTONG (contain) -->
     <video class="video-background" id="backgroundVideo" autoplay muted loop playsinline poster="https://picsum.photos/id/104/1920/1080">
         <source src="https://www.image2url.com/r2/default/videos/1777021085438-4c5933f8-2d34-4fd4-b6b1-ea879e8ed302.mp4" type="video/mp4">
     </video>
@@ -751,6 +660,7 @@
             <p>Rimuru Store hadir sejak 2020 sebagai penyedia topup game & layanan digital terpercaya. Dengan semangat pelayanan ala dunia anime, kami menawarkan proses super cepat, harga kompetitif, dan dukungan ramah 24 jam.</p>
             <div style="margin-top:1.2rem"><strong>💳 Metode Pembayaran:</strong> DANA, GOPAY, OVO, SPAY, SEA BANK, QRIS</div>
             <div><strong>📞 Nomor Transaksi:</strong> 0831-4042-7092 | BANK JAGO: 901428220963</div>
+            <!-- Email dan Admin sudah dipindahkan ke bagian Kontak -->
         </div>
     </div>
 </section>
@@ -801,6 +711,17 @@
                 <h4>Instagram</h4>
                 <p>@ZAINALA_KEYΖΙ</p>
             </div>
+            <!-- Email dan Admin dipindahkan ke sini -->
+            <div class="contact-card">
+                <i class="fas fa-envelope fa-2x" style="color:#fbbf24;"></i>
+                <h4>Email</h4>
+                <p>irwanaril798@gmail.com</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-user fa-2x" style="color:#9b30f9;"></i>
+                <h4>Admin</h4>
+                <p>Irwan Ariel</p>
+            </div>
         </div>
     </div>
 </section>
@@ -824,14 +745,13 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Rimuru Store. All rights reserved. | Tema terinspirasi oleh dunia anime.</p>
+            <p>&copy; 2025 Rimuru Store. All rights reserved.</p>
         </div>
     </div>
 </footer>
 
 <script>
     (function() {
-        // TEMA GELAP/TERANG (default gelap)
         const body = document.body;
         const themeToggle = document.getElementById('themeToggle');
         const icon = themeToggle.querySelector('i');
@@ -852,7 +772,6 @@
         });
         updateThemeUI();
 
-        // VIDEO HERO CONTROLS
         const video = document.getElementById('backgroundVideo');
         const playPauseBtn = document.getElementById('playPauseVideo');
         const muteUnmuteBtn = document.getElementById('muteUnmuteVideo');
@@ -872,109 +791,14 @@
             });
         }
 
-        // DATA PRODUK LENGKAP (Netflix, Disney+, Voucher Google Play dihapus)
         const productsData = [
-            {
-                category: "freefire",
-                name: "Free Fire",
-                prices: [
-                    "5 Diamonds - Rp 1.000",
-                    "12 Diamonds - Rp 2.000",
-                    "20 Diamonds - Rp 3.000",
-                    "35 Diamonds - Rp 5.000",
-                    "50 Diamonds - Rp 7.000",
-                    "70 Diamonds - Rp 10.000",
-                    "100 Diamonds - Rp 14.000",
-                    "140 Diamonds - Rp 20.000",
-                    "200 Diamonds - Rp 28.000",
-                    "355 Diamonds - Rp 50.000",
-                    "500 Diamonds - Rp 70.000",
-                    "1000 Diamonds - Rp 140.000"
-                ]
-            },
-            {
-                category: "mobilelegends",
-                name: "Mobile Legends",
-                prices: [
-                    "11 Diamonds - Rp 3.000",
-                    "22 Diamonds - Rp 6.000",
-                    "30 Diamonds - Rp 8.000",
-                    "56 Diamonds - Rp 15.000",
-                    "86 Diamonds - Rp 22.000",
-                    "172 Diamonds - Rp 44.000",
-                    "257 Diamonds - Rp 66.000",
-                    "344 Diamonds - Rp 88.000",
-                    "514 Diamonds - Rp 132.000",
-                    "600 Diamonds - Rp 154.000",
-                    "706 Diamonds - Rp 180.000",
-                    "1000 Diamonds - Rp 250.000"
-                ]
-            },
-            {
-                category: "roblox",
-                name: "Roblox",
-                prices: [
-                    "40 Robux - Rp 6.000",
-                    "80 Robux - Rp 12.000",
-                    "160 Robux - Rp 24.000",
-                    "240 Robux - Rp 36.000",
-                    "320 Robux - Rp 48.000",
-                    "450 Robux - Rp 67.000",
-                    "800 Robux - Rp 120.000",
-                    "1000 Robux - Rp 150.000",
-                    "2000 Robux - Rp 300.000"
-                ]
-            },
-            {
-                category: "cod",
-                name: "Call of Duty",
-                prices: [
-                    "31 CP - Rp 5.000",
-                    "53 CP - Rp 8.000",
-                    "62 CP - Rp 10.000",
-                    "124 CP - Rp 20.000",
-                    "155 CP - Rp 25.000",
-                    "310 CP - Rp 50.000",
-                    "620 CP - Rp 100.000",
-                    "1260 CP - Rp 200.000"
-                ]
-            },
-            {
-                category: "pubg",
-                name: "PUBG Mobile",
-                prices: [
-                    "30 UC - Rp 6.000",
-                    "60 UC - Rp 12.000",
-                    "120 UC - Rp 24.000",
-                    "180 UC - Rp 36.000",
-                    "300 UC - Rp 60.000",
-                    "600 UC - Rp 120.000",
-                    "1500 UC - Rp 300.000",
-                    "3000 UC - Rp 600.000"
-                ]
-            },
-            {
-                category: "genshin",
-                name: "Genshin Impact",
-                prices: [
-                    "60 Genesis Crystals - Rp 12.000",
-                    "300+30 Genesis Crystals - Rp 60.000",
-                    "980+110 Genesis Crystals - Rp 200.000",
-                    "1980+260 Genesis Crystals - Rp 400.000",
-                    "3280+600 Genesis Crystals - Rp 650.000",
-                    "6480+1600 Genesis Crystals - Rp 1.300.000"
-                ]
-            },
-            {
-                category: "lainnya",
-                name: "Layanan Digital",
-                prices: [
-                    "Spotify Premium 1 Bulan - Rp 55.000",
-                    "YouTube Premium 1 Bulan - Rp 65.000",
-                    "Bot WhatsApp 1 Bulan - Rp 15.000",
-                    "Sewa Bot Discord 1 Bulan - Rp 20.000"
-                ]
-            }
+            { category: "freefire", name: "Free Fire", prices: ["5 Diamonds - Rp 1.000","12 Diamonds - Rp 2.000","20 Diamonds - Rp 3.000","35 Diamonds - Rp 5.000","50 Diamonds - Rp 7.000","70 Diamonds - Rp 10.000","100 Diamonds - Rp 14.000","140 Diamonds - Rp 20.000","200 Diamonds - Rp 28.000","355 Diamonds - Rp 50.000","500 Diamonds - Rp 70.000","1000 Diamonds - Rp 140.000"] },
+            { category: "mobilelegends", name: "Mobile Legends", prices: ["11 Diamonds - Rp 3.000","22 Diamonds - Rp 6.000","30 Diamonds - Rp 8.000","56 Diamonds - Rp 15.000","86 Diamonds - Rp 22.000","172 Diamonds - Rp 44.000","257 Diamonds - Rp 66.000","344 Diamonds - Rp 88.000","514 Diamonds - Rp 132.000","600 Diamonds - Rp 154.000","706 Diamonds - Rp 180.000","1000 Diamonds - Rp 250.000"] },
+            { category: "roblox", name: "Roblox", prices: ["40 Robux - Rp 6.000","80 Robux - Rp 12.000","160 Robux - Rp 24.000","240 Robux - Rp 36.000","320 Robux - Rp 48.000","450 Robux - Rp 67.000","800 Robux - Rp 120.000","1000 Robux - Rp 150.000","2000 Robux - Rp 300.000"] },
+            { category: "cod", name: "Call of Duty", prices: ["31 CP - Rp 5.000","53 CP - Rp 8.000","62 CP - Rp 10.000","124 CP - Rp 20.000","155 CP - Rp 25.000","310 CP - Rp 50.000","620 CP - Rp 100.000","1260 CP - Rp 200.000"] },
+            { category: "pubg", name: "PUBG Mobile", prices: ["30 UC - Rp 6.000","60 UC - Rp 12.000","120 UC - Rp 24.000","180 UC - Rp 36.000","300 UC - Rp 60.000","600 UC - Rp 120.000","1500 UC - Rp 300.000","3000 UC - Rp 600.000"] },
+            { category: "genshin", name: "Genshin Impact", prices: ["60 Genesis Crystals - Rp 12.000","300+30 Genesis Crystals - Rp 60.000","980+110 Genesis Crystals - Rp 200.000","1980+260 Genesis Crystals - Rp 400.000","3280+600 Genesis Crystals - Rp 650.000","6480+1600 Genesis Crystals - Rp 1.300.000"] },
+            { category: "lainnya", name: "Layanan Digital", prices: ["Spotify Premium 1 Bulan - Rp 55.000","YouTube Premium 1 Bulan - Rp 65.000","Bot WhatsApp 1 Bulan - Rp 15.000","Sewa Bot Discord 1 Bulan - Rp 20.000"] }
         ];
 
         let cart = [];
@@ -995,33 +819,19 @@
             productsContainer.innerHTML = '';
             const filtered = productsData.filter(p => {
                 const matchCat = filter === 'all' || p.category === filter;
-                const matchSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    p.prices.some(pr => pr.toLowerCase().includes(searchTerm.toLowerCase()));
+                const matchSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) || p.prices.some(pr => pr.toLowerCase().includes(searchTerm.toLowerCase()));
                 return matchCat && matchSearch;
             });
-
             if (filtered.length === 0) {
                 productsContainer.innerHTML = '<p style="grid-column:1/-1;text-align:center;">Tidak ada produk ditemukan.</p>';
                 return;
             }
-
             filtered.forEach(product => {
                 const card = document.createElement('div');
                 card.className = 'product-card';
-                card.innerHTML = `
-                    <div class="product-header"><h3>${product.name}</h3></div>
-                    <div class="product-body">
-                        ${product.prices.map(price => `
-                            <div class="price-item">
-                                <span>${price}</span>
-                                <button class="add-to-cart" data-product="${product.name}" data-price="${price}">+ Topup</button>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
+                card.innerHTML = `<div class="product-header"><h3>${product.name}</h3></div><div class="product-body">${product.prices.map(price => `<div class="price-item"><span>${price}</span><button class="add-to-cart" data-product="${product.name}" data-price="${price}">+ Topup</button></div>`).join('')}</div>`;
                 productsContainer.appendChild(card);
             });
-
             document.querySelectorAll('.add-to-cart').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const name = e.target.dataset.product;
@@ -1032,10 +842,7 @@
             });
         }
 
-        function addToCart(name, priceStr, priceNumber) {
-            cart.push({ name, priceStr, priceNumber });
-            updateCartUI();
-        }
+        function addToCart(name, priceStr, priceNumber) { cart.push({ name, priceStr, priceNumber }); updateCartUI(); }
 
         function updateCartUI() {
             cartBadge.textContent = cart.length;
@@ -1045,12 +852,10 @@
                 total += item.priceNumber;
                 const div = document.createElement('div');
                 div.className = 'cart-item';
-                div.innerHTML = `<span>${item.name} - ${item.priceStr}</span>
-                    <button class="remove-item" data-index="${index}" style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:1.2rem;">&times;</button>`;
+                div.innerHTML = `<span>${item.name} - ${item.priceStr}</span><button class="remove-item" data-index="${index}" style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:1.2rem;">&times;</button>`;
                 cartItemsDiv.appendChild(div);
             });
             cartTotalSpan.textContent = 'Rp ' + total.toLocaleString('id-ID');
-
             document.querySelectorAll('.remove-item').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const index = e.target.dataset.index;
@@ -1068,8 +873,7 @@
             if (cart.length === 0) return alert('Keranjang kosong!');
             let message = 'Halo Rimuru Store, saya mau order:%0A';
             cart.forEach(item => message += `- ${item.name} : ${item.priceStr}%0A`);
-            const total = cart.reduce((s, i) => s + i.priceNumber, 0);
-            message += `%0ATotal: Rp ${total.toLocaleString('id-ID')}`;
+            message += `%0ATotal: Rp ${cart.reduce((s, i) => s + i.priceNumber, 0).toLocaleString('id-ID')}`;
             window.open(`https://wa.me/6283140427092?text=${message}`, '_blank');
         });
 
@@ -1084,12 +888,7 @@
         });
 
         window.addEventListener('load', () => {
-            const loading = document.getElementById('loading');
-            loading.style.display = 'flex';
-            setTimeout(() => {
-                loading.style.display = 'none';
-                displayProducts();
-            }, 1000);
+            displayProducts();
         });
     })();
 </script>
