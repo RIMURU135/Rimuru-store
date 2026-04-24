@@ -175,6 +175,7 @@
             box-shadow: var(--neon-glow);
         }
 
+        /* HERO dengan video contain penuh tanpa potongan */
         .hero {
             position: relative;
             width: 100%;
@@ -186,7 +187,7 @@
             text-align: center;
             color: white;
             overflow: hidden;
-            background-color: #0a0418;
+            background-color: #0a0418; /* fallback jika video tidak tertampil */
         }
 
         .video-background {
@@ -195,10 +196,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;    /* ← PASTIKAN TIDAK TERPOTONG */
             object-position: center center;
             z-index: 0;
-            opacity: 0.9;
+            background-color: #000; /* letterbox hitam jika aspek video berbeda */
         }
 
         .hero::before {
@@ -210,6 +211,7 @@
             height: 100%;
             background: linear-gradient(135deg, rgba(30, 10, 60, 0.75), rgba(10, 5, 35, 0.8));
             z-index: 1;
+            pointer-events: none; /* agar kontrol video tetap bisa diklik */
         }
 
         .hero-content {
@@ -658,6 +660,7 @@
             .header-content { flex-direction: column; }
             .category-filters { justify-content: center; }
             .section-title h2 { font-size: 2rem; }
+            .product-card { margin: 0 0.5rem; }
         }
 
         ::-webkit-scrollbar { width: 8px; }
@@ -703,7 +706,7 @@
 </header>
 
 <section class="hero" id="home">
-    <!-- VIDEO BACKGROUND DIGANTI -->
+    <!-- VIDEO BACKGROUND TIDAK TERPOTONG (contain) -->
     <video class="video-background" id="backgroundVideo" autoplay muted loop playsinline poster="https://picsum.photos/id/104/1920/1080">
         <source src="https://www.image2url.com/r2/default/videos/1777021085438-4c5933f8-2d34-4fd4-b6b1-ea879e8ed302.mp4" type="video/mp4">
     </video>
