@@ -56,7 +56,6 @@
             margin: 0 auto;
         }
 
-        /* Header */
         header {
             background: var(--header-bg);
             color: white;
@@ -129,7 +128,6 @@
             justify-content: center;
         }
 
-        /* HERO + VIDEO - TIDAK TERPOTONG, LANDSCAPE UTUH */
         .hero {
             position: relative;
             width: 100%;
@@ -265,7 +263,6 @@
             border-bottom: 4px solid var(--primary);
         }
 
-        /* Filter & Produk */
         .product-filters {
             display: flex;
             justify-content: space-between;
@@ -312,6 +309,7 @@
             cursor: pointer;
             font-weight: 500;
             transition: 0.2s;
+            color: var(--text-color);
         }
 
         .category-btn.active {
@@ -380,7 +378,6 @@
             background: var(--primary-dark);
         }
 
-        /* Cart */
         .cart-container {
             position: fixed;
             bottom: 24px;
@@ -475,7 +472,6 @@
         .btn-clear { background: #94a3b8; color: white; }
         .btn-checkout { background: #25D366; color: white; }
 
-        /* Testimoni */
         .testimonials {
             display: flex;
             flex-wrap: wrap;
@@ -503,7 +499,6 @@
         }
         .testimonial-rating { color: #fbbf24; margin: 0.5rem 0; }
 
-        /* Kontak */
         .contact-info {
             display: flex;
             flex-wrap: wrap;
@@ -591,7 +586,10 @@
 
 <header>
     <div class="container header-content">
-        <div class="logo"><img src="https://file.idnet.my.id/api/preview.php?file=ymggle9h.png" alt="Rimuru Store"><h1>Rimuru Store</h1></div>
+        <div class="logo">
+            <img src="https://www.image2url.com/r2/default/files/1777688423905-b001353d-1314-4be4-8fd1-d9d6ef69bc51.jpg" alt="Rimuru Store Logo" style="height:48px; width:48px; object-fit:cover; border-radius:50%;">
+            <h1>Rimuru Store</h1>
+        </div>
         <nav><ul><li><a href="#home">Beranda</a></li><li><a href="#products">Produk</a></li><li><a href="#about">Tentang</a></li><li><a href="#testimonials">Testimoni</a></li><li><a href="#contact">Kontak</a></li><li><button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button></li></ul></nav>
     </div>
 </header>
@@ -610,8 +608,335 @@
 <div class="category-filters"><button class="category-btn active" data-category="all">Semua</button><button class="category-btn" data-category="freefire">Free Fire</button><button class="category-btn" data-category="mobilelegends">Mobile Legends</button><button class="category-btn" data-category="roblox">Roblox</button><button class="category-btn" data-category="cod">Call of Duty</button><button class="category-btn" data-category="pubg">PUBG</button><button class="category-btn" data-category="lainnya">Lainnya</button></div></div>
 <div class="products" id="productsContainer"></div></div></section>
 
-<section id="about" style="background-color: var(--section-bg);"><div class="container"><div class="section-title"><h2>Tentang Kami</h2></div><div class="about-content"><p>Rimuru Store adalah penyedia topup game & layanan digital terpercaya sejak 2020. Proses super cepat, harga miring, dan dukungan ramah. Metode pembayaran: DANA, GOPAY, OVO, SPAY, SEA BANK, QRIS. CS 24 jam siap membantu.</p><div style="margin-top:1rem"><strong>💳 Metode Pembayaran:</strong> 0831-4042-7092 (Semua e-Wallet) / BANK JAGO : 901428220963</div></div></div></section>
+<section id="about" style="background-color: var(--section-bg);"><div class="container"><div class="section-title"><h2>Tentang Kami</h2></div><div class="about-content"><p>Rimuru Store adalah penyedia topup game & layanan digital terpercaya sejak 2020. Proses super cepat, harga miring, dan dukungan ramah. Metode pembayaran: DANA, GOPAY, OVO, SPAY, SEA BANK, QRIS. CS 24 jam siap membantu.</p><div style="margin-top:1rem"><strong>💳 Metode Pembayaran:</strong> 0831-4042-7092 (Semua e-Wallet) / BANK JAGO : 901428220963</div>
+        <div style="margin-top:2rem; text-align:center;">
+            <p><strong>📱 Scan QRIS untuk Pembayaran</strong></p>
+            <img src="https://www.image2url.com/r2/default/files/1777684205267-2fa2694c-ba5a-4e46-8a96-f17da2fb7fa2.png" alt="QRIS Rimuru Store" style="max-width:280px; width:100%; height:auto; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); margin-top:0.5rem;">
+        </div>
+    </div></div></section>
 
 <section id="testimonials"><div class="container"><div class="section-title"><h2>⭐ Testimoni</h2></div><div class="testimonials"><div class="testimonial-card"><div class="testimonial-header"><img src="https://randomuser.me/api/portraits/men/32.jpg"><div><h4>Rizky P.</h4><p>FF Player</p></div></div><div class="testimonial-rating">★★★★★</div><p>"Diamond masuk dalam 2 menit, admin baik, jadi langganan!"</p></div><div class="testimonial-card"><div class="testimonial-header"><img src="https://randomuser.me/api/portraits/women/44.jpg"><div><h4>Sarah W.</h4><p>MLBB</p></div></div><div class="testimonial-rating">★★★★★</div><p>"Murah meriah, proses cepet. Rekomended!"</p></div><div class="testimonial-card"><div class="testimonial-header"><img src="https://randomuser.me/api/portraits/men/75.jpg"><div><h4>Andi S.</h4><p>Bot WA</p></div></div><div class="testimonial-rating">★★★★½</div><p>"Sewa bot stabil, respon admin sigap. Mantap!"</p></div></div></div></section>
 
-<section id="contact" style="background-color: var(--section-bg);"><div class="container"><div class
+<section id="contact" style="background-color: var(--section-bg);"><div class="container"><div class="section-title"><h2>📞 Hubungi Kami</h2></div>
+<div class="contact-info">
+    <div class="contact-card"><i class="fab fa-whatsapp fa-3x" style="color:#25D366"></i><h3>WhatsApp</h3><p>0812-3456-7890</p></div>
+    <div class="contact-card"><i class="fab fa-instagram fa-3x" style="color:#E1306C"></i><h3>Instagram</h3><p>@ZAINALA_KEYΖΙ</p></div>
+    <div class="contact-card"><i class="fas fa-envelope fa-3x" style="color:#EA4335"></i><h3>Email</h3><p>irwanaril798@gmail.com</p></div>
+    <div class="contact-card"><i class="fas fa-user fa-3x" style="color:#3498db"></i><h3>Admin</h3><p>Irwan Aril</p></div>
+</div>
+<div style="text-align:center; margin-top:2rem" class="social-links">
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+</div></div></section>
+
+<footer>
+    <div class="container footer-content">
+        <div><h3>Rimuru Store</h3><p>Topup Game & Layanan Digital #1</p></div>
+        <div><h4>Navigasi</h4><p><a href="#home" style="color:#cbd5e1">Beranda</a> | <a href="#products" style="color:#cbd5e1">Produk</a> | <a href="#contact" style="color:#cbd5e1">Kontak</a></p></div>
+        <div><p>Jam Operasional: 24/7</p><p>Metode: DANA, GOPAY, OVO, QRIS, Bank Transfer</p></div>
+    </div>
+    <div class="copyright"><p>&copy; 2026 Rimuru Store. All rights reserved.</p></div>
+</footer>
+
+<script>
+    (function() {
+        // ========== DATA PRODUK ==========
+        const productData = {
+            freefire: {
+                name: "Free Fire",
+                items: [
+                    { name: "70 Diamond", price: 8000 },
+                    { name: "140 Diamond", price: 16000 },
+                    { name: "355 Diamond", price: 40000 },
+                    { name: "720 Diamond", price: 80000 },
+                    { name: "1450 Diamond", price: 160000 },
+                    { name: "2180 Diamond", price: 240000 },
+                    { name: "3640 Diamond", price: 400000 },
+                    { name: "Bundle Mingguan", price: 30000 },
+                    { name: "Bundle Bulanan", price: 90000 },
+                ]
+            },
+            mobilelegends: {
+                name: "Mobile Legends",
+                items: [
+                    { name: "86 Diamonds", price: 20000 },
+                    { name: "172 Diamonds", price: 40000 },
+                    { name: "344 Diamonds", price: 80000 },
+                    { name: "429 Diamonds", price: 100000 },
+                    { name: "706 Diamonds", price: 160000 },
+                    { name: "878 Diamonds", price: 200000 },
+                    { name: "Starlight Member", price: 120000 },
+                    { name: "Weekly Diamond Pass", price: 30000 },
+                ]
+            },
+            roblox: {
+                name: "Roblox",
+                items: [
+                    { name: "100 Robux", price: 16000 },
+                    { name: "200 Robux", price: 32000 },
+                    { name: "400 Robux", price: 64000 },
+                    { name: "800 Robux", price: 120000 },
+                    { name: "1000 Robux", price: 150000 },
+                    { name: "2000 Robux", price: 300000 },
+                ]
+            },
+            cod: {
+                name: "Call of Duty",
+                items: [
+                    { name: "80 CP", price: 8000 },
+                    { name: "160 CP", price: 16000 },
+                    { name: "400 CP", price: 40000 },
+                    { name: "800 CP", price: 80000 },
+                    { name: "1600 CP", price: 160000 },
+                    { name: "4000 CP", price: 400000 },
+                ]
+            },
+            pubg: {
+                name: "PUBG Mobile",
+                items: [
+                    { name: "60 UC", price: 8000 },
+                    { name: "120 UC", price: 16000 },
+                    { name: "300 UC", price: 40000 },
+                    { name: "600 UC", price: 80000 },
+                    { name: "1500 UC", price: 200000 },
+                    { name: "3000 UC", price: 400000 },
+                    { name: "Royale Pass", price: 120000 },
+                ]
+            },
+            lainnya: {
+                name: "Layanan Lainnya",
+                items: [
+                    { name: "Sewa Bot WA (1 bulan)", price: 35000 },
+                    { name: "Sewa Bot WA (3 bulan)", price: 90000 },
+                    { name: "Joki Rank ML (Epic-Legend)", price: 50000 },
+                    { name: "Joki Rank ML (Mythic)", price: 100000 },
+                    { name: "Google Play ID 50K", price: 52000 },
+                    { name: "Google Play ID 100K", price: 102000 },
+                    { name: "Voucher Steam 50K", price: 52000 },
+                    { name: "Spotify Premium 1 Bulan", price: 25000 },
+                    { name: "Netflix 1 Bulan", price: 45000 },
+                ]
+            }
+        };
+
+        // ========== STATE ==========
+        let cart = [];
+        let currentCategory = 'all';
+        let searchTerm = '';
+
+        // ========== DOM ELEMENTS ==========
+        const productsContainer = document.getElementById('productsContainer');
+        const searchInput = document.getElementById('searchInput');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const cartBtn = document.getElementById('cartBtn');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartBadge = document.getElementById('cartBadge');
+        const clearCartBtn = document.getElementById('clearCart');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const themeToggle = document.getElementById('themeToggle');
+        const loadingEl = document.getElementById('loading');
+        const backgroundVideo = document.getElementById('backgroundVideo');
+        const videoFallback = document.getElementById('videoFallback');
+        const playPauseVideo = document.getElementById('playPauseVideo');
+        const muteUnmuteVideo = document.getElementById('muteUnmuteVideo');
+
+        // ========== FUNCTIONS ==========
+        function renderProducts() {
+            if (!productsContainer) return;
+            let html = '';
+            const categories = Object.keys(productData);
+            
+            categories.forEach(cat => {
+                if (currentCategory !== 'all' && currentCategory !== cat) return;
+                const product = productData[cat];
+                const filteredItems = product.items.filter(item => 
+                    item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+                
+                if (filteredItems.length === 0) return;
+                
+                html += `
+                    <div class="product-card" data-category="${cat}">
+                        <div class="product-header"><h3>${product.name}</h3></div>
+                        <div class="product-body">
+                            ${filteredItems.map((item, index) => `
+                                <div class="price-item">
+                                    <span>${item.name}</span>
+                                    <div style="display:flex;align-items:center;gap:0.5rem;">
+                                        <span style="font-weight:600;">Rp ${item.price.toLocaleString('id-ID')}</span>
+                                        <button class="add-to-cart" data-category="${cat}" data-index="${index}" data-name="${item.name}" data-price="${item.price}">+</button>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            if (html === '') {
+                html = '<div style="text-align:center;padding:3rem;grid-column:1/-1;">Produk tidak ditemukan. Coba kata kunci lain.</div>';
+            }
+            productsContainer.innerHTML = html;
+            
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const name = this.dataset.name;
+                    const price = parseInt(this.dataset.price);
+                    const category = this.dataset.category;
+                    addToCart({ name, price, category });
+                });
+            });
+        }
+
+        function addToCart(item) {
+            const existing = cart.find(i => i.name === item.name && i.category === item.category);
+            if (existing) {
+                existing.qty = (existing.qty || 1) + 1;
+            } else {
+                cart.push({ ...item, qty: 1 });
+            }
+            updateCart();
+            cartBtn.style.transform = 'scale(1.1)';
+            setTimeout(() => { cartBtn.style.transform = ''; }, 200);
+        }
+
+        function removeFromCart(index) {
+            if (cart[index].qty > 1) {
+                cart[index].qty -= 1;
+            } else {
+                cart.splice(index, 1);
+            }
+            updateCart();
+        }
+
+        function updateCart() {
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            
+            cartBadge.textContent = totalItems;
+            cartTotal.textContent = 'Rp ' + total.toLocaleString('id-ID');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align:center;padding:1rem;">Keranjang kosong</p>';
+            } else {
+                cartItems.innerHTML = cart.map((item, i) => `
+                    <div class="cart-item">
+                        <div>
+                            <strong>${item.name}</strong>
+                            <div style="font-size:0.8rem;color:#7f8c8d;">${item.qty}x Rp ${item.price.toLocaleString('id-ID')}</div>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:0.5rem;">
+                            <span>Rp ${(item.price * item.qty).toLocaleString('id-ID')}</span>
+                            <button onclick="window._removeFromCart(${i})" style="background:#e74c3c;color:white;border:none;border-radius:50%;width:24px;height:24px;cursor:pointer;">-</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        window._removeFromCart = function(index) {
+            removeFromCart(index);
+        };
+
+        function checkout() {
+            if (cart.length === 0) return alert('Keranjang masih kosong!');
+            let message = 'Halo Rimuru Store, saya ingin memesan:%0A%0A';
+            cart.forEach(item => {
+                message += `- ${item.name} (${item.qty}x) : Rp ${(item.price * item.qty).toLocaleString('id-ID')}%0A`;
+            });
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            message += `%0ATotal: Rp ${total.toLocaleString('id-ID')}%0A%0AMohon info pembayaran.`;
+            window.open(`https://wa.me/6281234567890?text=${message}`, '_blank');
+        }
+
+        function setActiveCategory(category) {
+            currentCategory = category;
+            categoryBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.category === category);
+            });
+            renderProducts();
+        }
+
+        // ========== EVENT LISTENERS ==========
+        searchInput.addEventListener('input', function(e) {
+            searchTerm = e.target.value;
+            renderProducts();
+        });
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                setActiveCategory(this.dataset.category);
+            });
+        });
+
+        cartBtn.addEventListener('click', () => { cartModal.style.display = 'flex'; });
+        closeCart.addEventListener('click', () => { cartModal.style.display = 'none'; });
+        cartModal.addEventListener('click', function(e) {
+            if (e.target === cartModal) cartModal.style.display = 'none';
+        });
+        clearCartBtn.addEventListener('click', () => { cart = []; updateCart(); });
+        checkoutBtn.addEventListener('click', checkout);
+
+        const darkPref = localStorage.getItem('darkMode');
+        if (darkPref === 'enabled') {
+            document.body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        playPauseVideo.addEventListener('click', () => {
+            if (backgroundVideo.paused) {
+                backgroundVideo.play();
+                playPauseVideo.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                backgroundVideo.pause();
+                playPauseVideo.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+        muteUnmuteVideo.addEventListener('click', () => {
+            backgroundVideo.muted = !backgroundVideo.muted;
+            muteUnmuteVideo.innerHTML = backgroundVideo.muted ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
+        });
+
+        backgroundVideo.addEventListener('error', () => {
+            backgroundVideo.style.display = 'none';
+            videoFallback.style.display = 'block';
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        window.addEventListener('load', () => {
+            loadingEl.style.display = 'none';
+        });
+        setTimeout(() => { loadingEl.style.display = 'none'; }, 3000);
+
+        renderProducts();
+        updateCart();
+    })();
+</script>
+</body>
+</html>
